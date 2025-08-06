@@ -28,19 +28,19 @@ const resources = [
     icon: <Scale />,
     description:
       "Real-time competitor pricing to help you make smarter decisions.",
-    href: "/web-scraping-service",
+    href: "/competitor-price-data",
   },
   {
     title: "Expertise",
     icon: <Workflow />,
     description: "Industry-leading price intelligence trusted by top brands.",
-    href: "/web-scraping-service",
+    href: "/expertise",
   },
   {
     title: "Web Data Extraction",
     icon: <CircleOff />,
     description: "Accurate, scalable, and fully customized web data solutions.",
-    href: "/web-scraping-service",
+    href: "/web-data-extraction",
   },
   {
     title: "How it works",

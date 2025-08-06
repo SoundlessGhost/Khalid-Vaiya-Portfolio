@@ -1,14 +1,18 @@
-import ScrapingFeatures from "@/components/ScrapingFeatures";
-import WebScrapingServiceHeroSection from "@/components/web-scraping-service-hero-section";
-import WebScrapingIntro from "@/components/WebScrapingIntro";
+import PricingTrackerHero from "@/components/Web Scraping Service/web-scraping-tracker-hero";
+import ReusableComponent from "@/components/Web Scraping Service/web-scraping-component";
+import ScrapingFeatures from "@/components/Web Scraping Service/web-scraping-features";
+import WebScrapingServiceHeroSection from "@/components/Web Scraping Service/web-scraping-service-hero-section";
+import WebScrapingIntro from "@/components/Web Scraping Service/web-scraping-Intro";
 import React from "react";
 
 const WebScrapingService = () => {
   return (
-    <div>
+    <div className="pt-28">
       <WebScrapingServiceHeroSection />
       <WebScrapingIntro />
+      <ReusableComponent />
       <ScrapingFeatures />
+      <PricingTrackerHero />
     </div>
   );
 };

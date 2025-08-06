@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 import { Resources } from "./resources";
 import { LoginForm } from "./login-form";
 import { Pricing } from "@/components/pricing";
-import { WebScraping } from "@/components/web-scraping";
+import { WebScraping } from "@/components/Web Scraping Service/web-scraping";
 import { Solutions } from "@/components/solutions";
 
 export function Navbar() {
@@ -23,7 +23,7 @@ export function Navbar() {
           <div className="hidden md:flex mt-1 items-center">
             <WebScraping />
             <Solutions />
-            <Pricing />
+            {/* <Pricing /> */}
             <Resources />
           </div>
         </div>

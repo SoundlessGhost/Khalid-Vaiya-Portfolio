@@ -40,9 +40,7 @@ const ScrapingFeatures = () => {
         </div>
       </div>
 
-      <button className="mt-12 bg-green-500 text-white px-8 py-3 rounded-md hover:bg-green-600 transition">
-        Start Free Trial
-      </button>
+      <button className="button1 mt-10">Start Free Trial</button>
     </section>
   );
 };
