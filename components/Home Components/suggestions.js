@@ -20,7 +20,7 @@ const suggestions = [
     title: "Problem",
     sub_title: "Data Inconsistencies Across Platforms.",
     description:
-      "Job websites often have different structures, making it difficult to collect consistent data across platforms. The result is often mismatched or incomplete job data that can't be effectively used for recruitment or analysis.",
+      "Job websites often have different structures, making it difficult to collect consistent data across platforms. The result is often mismatched or incomplete job data that cant be effectively used for recruitment or analysis.",
     icon: <ServerCrash className="w-12 h-12 mx-auto mb-4" />,
   },
   {

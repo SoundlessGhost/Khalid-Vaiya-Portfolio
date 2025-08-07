@@ -10,7 +10,7 @@ export default function PartnerExperience() {
         <p className="text-gray-600 max-w-3xl mx-auto mb-12">
           From day one, we become an extension of your team — offering
           collaborative, hands-on support to ensure your data journey is smooth,
-          scalable, and aligned with your goals. That's why 200+ enterprises
+          scalable, and aligned with your goals. Thats why 200+ enterprises
           trust us to power their insights.
         </p>
 
