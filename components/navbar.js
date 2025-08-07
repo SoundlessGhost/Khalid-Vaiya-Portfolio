@@ -3,11 +3,10 @@
 import React from "react";
 import Link from "next/link";
 
-import { Resources } from "./resources";
-import { LoginForm } from "./login-form";
-import { Pricing } from "@/components/pricing";
-import { WebScraping } from "@/components/Web Scraping Service/web-scraping";
-import { Solutions } from "@/components/solutions";
+import { Resources } from "./Page Components/resources";
+import { LoginForm } from "./Page Components/login-form";
+import { Solutions } from "@/components/Page Components/solutions";
+import { WebScraping } from "@/components/Page Components/web-scraping";
 
 export function Navbar() {
   return (
@@ -23,7 +22,6 @@ export function Navbar() {
           <div className="hidden md:flex mt-1 items-center">
             <WebScraping />
             <Solutions />
-            {/* <Pricing /> */}
             <Resources />
           </div>
         </div>

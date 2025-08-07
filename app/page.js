@@ -1,7 +1,8 @@
-import Suggestions from "@/components/suggestions";
-import FastscrapingService from "@/components/fastscraping-service";
-import DataExtractionService from "@/components/data-extraction-service";
-import { AccordionDemo } from "@/components/frequently-asked-questions";
+import Suggestions from "@/components/Home Components/suggestions";
+import FastScrapingService from "@/components/Home Components/fastscraping-service";
+import DataExtractionService from "@/components/Home Components/data-extraction-service";
+
+import { AccordionDemo } from "@/components/Home Components/frequently-asked-questions";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
       </div>
       <DataExtractionService />
 
-      <FastscrapingService />
+      <FastScrapingService />
 
       <Suggestions />
 
