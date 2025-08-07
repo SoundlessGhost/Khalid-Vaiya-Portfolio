@@ -15,7 +15,7 @@ const SupportsPage = () => {
           </h1>
           <p className="text-sm max-w-2xl mx-auto">
             Browse our resources for helpful guides, integration tips, and fast
-            answers. Whether you're setting up or troubleshooting, we’re here to
+            answers. Whether you're setting up or troubleshooting, were here to
             support you.
           </p>
         </div>
@@ -88,7 +88,7 @@ const SupportsPage = () => {
             Get in Touch
           </h2>
           <p className="text-gray-600 mb-12">
-            Can’t find the answer you’re looking for in our help articles? No
+            Cant find the answer you re looking for in our help articles? No
             problem — reach out to us directly and our team will get back to you
             shortly.
           </p>
