@@ -15,7 +15,7 @@ const SupportsPage = () => {
           </h1>
           <p className="text-sm max-w-2xl mx-auto">
             Browse our resources for helpful guides, integration tips, and fast
-            answers. Whether you're setting up or troubleshooting, were here to
+            answers. Whether youre setting up or troubleshooting, were here to
             support you.
           </p>
         </div>
