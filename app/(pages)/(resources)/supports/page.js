@@ -106,9 +106,21 @@ const SupportsPage = () => {
                 Need help navigating our platform or stuck on something
                 technical? Our support team is here to guide you through.
               </p>
-              <button className="bg-gray-500 hover:bg-gray-600 text-white text-sm font-medium px-4 py-2 rounded">
-                CONTACT SUPPORT
-              </button>
+
+              <div className="mt-10">
+                <button className="button1 inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:-translate-y-0.5 hover:shadow">
+                  Contact Support
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
 
             {/* Contact Sales */}
@@ -123,9 +135,20 @@ const SupportsPage = () => {
                 Curious about pricing or need a tailored solution? Our sales
                 team is ready to help you explore the right plan for your needs.
               </p>
-              <button className="bg-gray-500 hover:bg-gray-600 text-white text-sm font-medium px-4 py-2 rounded">
-                CONTACT SALES
-              </button>
+              <div className="mt-10">
+                <button className="button1 inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:-translate-y-0.5 hover:shadow">
+                  Contact Sales
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
