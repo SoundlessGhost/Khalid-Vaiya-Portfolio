@@ -1,9 +1,9 @@
 import "./globals.css";
 
 import Footer from "@/components/footer";
+import NavbarAnimated from "@/components/navbar";
 
 import { Work_Sans } from "next/font/google";
-import { Navbar } from "@/components/navbar";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${workSans.variable} font-sans antialiased`}>
-        <Navbar />
+        <NavbarAnimated />
         {children}
         <Footer />
       </body>
