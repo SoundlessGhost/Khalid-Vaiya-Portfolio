@@ -1,23 +1,24 @@
 import Image from "next/image";
 import React from "react";
 
-const CompetitorPriceDataHeroSection = () => {
+const RealEstateHeroSection = () => {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-gradient-to-br from-[#e6f4ea] to-[#fce4e4] pt-48 pb-28">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         {/* Left Side Content */}
         <div>
           <p className="text-red-500 font-semibold text-sm uppercase mb-2">
-            Set the Right Price, Every Time With Confidence
+            Real Estate Data Collection
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Real-Time Competitive
+            Reliable Data for
             <br />
-            Pricing Data
+            Real Estate Professionals
           </h1>
           <p className="text-gray-700 text-lg mb-8">
-            Make informed pricing decisions with confidence powered by precise,
-            timely, and continuously updated competitor price data.
+            Access real-time property listings, pricing trends, and market data
+            tailored to give you a competitive edge. Fastscraping provides
+            actionable insights for informed decision-making.
           </p>
           <div className="mt-10">
             <button className="button1 inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:-translate-y-0.5 hover:shadow">
@@ -38,7 +39,7 @@ const CompetitorPriceDataHeroSection = () => {
         {/* Right Side Image */}
         <div className="flex justify-center">
           <Image
-            src="/images/Competitor Price/Competitive intelligence.png"
+            src="/images/Product Data/New year's resolutions-pana.png"
             alt="Web scraping illustration"
             width={400}
             height={300}
@@ -50,4 +51,4 @@ const CompetitorPriceDataHeroSection = () => {
   );
 };
 
-export default CompetitorPriceDataHeroSection;
+export default RealEstateHeroSection;

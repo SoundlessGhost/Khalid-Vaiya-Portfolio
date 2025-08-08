@@ -90,7 +90,7 @@ const ReusableComponent = () => {
           whileHover={{ rotate: 2, y: -2 }}
         >
           <Image
-            src="/alexander.jpg"
+            src="/images/Web Scraping/alexander.jpg"
             alt="Margaret Lane"
             width={160}
             height={160}

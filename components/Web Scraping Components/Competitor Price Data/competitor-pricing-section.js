@@ -5,7 +5,7 @@ export default function CompetitorPricingSection() {
     <section className="bg-white py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-between">
       <div className="w-full lg:w-1/2 mb-12 lg:mb-0">
         <Image
-          src="/Business competition.png"
+          src="/images/Competitor Price/Business competition.png"
           alt="Business competition "
           width={400}
           height={300}

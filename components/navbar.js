@@ -28,7 +28,7 @@ function useScrollNav() {
     const onScroll = () => {
       const y = window.scrollY;
       setElevated(y > 8);
-      setHidden(y > lastY.current && y > 120); // hide when scrolling down past hero
+      setHidden(y > lastY.current && y > 120);
       lastY.current = y;
     };
     onScroll();
@@ -230,9 +230,14 @@ export default function NavbarAnimated() {
               <Flyout label="Resources" items={resources} />
               <Link
                 href="/about"
-                className="px-3 py-2 text-sm text-slate-200/90 hover:text-white transition"
+                className="group relative px-3 text-sm text-slate-200/90 hover:text-white transition"
               >
                 About
+                <span
+                  className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
+               origin-left scale-x-0 bg-emerald-400 transition-transform duration-300
+               group-hover:scale-x-100"
+                />
               </Link>
             </nav>
 
@@ -300,10 +305,11 @@ export default function NavbarAnimated() {
           <Link
             href="/about"
             onClick={() => setMobile(false)}
-            className="flex items-center gap-2 rounded-md px-2 py-2 text-sm text-slate-300 hover:bg-white/5"
+            className="flex items-center gap-2 rounded-md py-4 font-bold text-sm text-slate-300 border-b border-white/10"
           >
             About
           </Link>
+
           <Link
             href="/book-demo"
             onClick={() => setMobile(false)}

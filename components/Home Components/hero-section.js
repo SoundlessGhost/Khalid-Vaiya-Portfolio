@@ -150,9 +150,9 @@ export default function HeroSection() {
           >
             {[
               { number: "50M+", label: "Pages Scraped Daily", icon: Database },
-              { number: "99.9%", label: "Uptime SLA", icon: Shield },
+              { number: "200+", label: "Enterprise Customers", icon: Shield },
               { number: "10K+", label: "Active Developers", icon: Globe },
-              { number: "<100ms", label: "Average Response", icon: Zap },
+              { number: "100%", label: "Satisfaction Guarantee", icon: Zap },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

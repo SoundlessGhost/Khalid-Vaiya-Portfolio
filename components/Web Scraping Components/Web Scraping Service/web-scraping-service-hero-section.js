@@ -65,7 +65,7 @@ const WebScrapingServiceHeroSection = () => {
           className="flex justify-center opacity-0 translate-y-6 transition-all duration-700 ease-out delay-150 [&&.is-visible]:opacity-100 [&&.is-visible]:translate-y-0"
         >
           <Image
-            src="/Money.png"
+            src="/images/Web Scraping/Money.png"
             alt="Web scraping illustration"
             width={400}
             height={300}
