@@ -57,7 +57,7 @@ export function WebScraping() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <p className={` cursor-pointer text-sm rounded-md p-2 `}>
+            <p className={` cursor-pointer text-sm text-black rounded-md p-2 `}>
               Web Scraping
             </p>
           </NavigationMenuTrigger>

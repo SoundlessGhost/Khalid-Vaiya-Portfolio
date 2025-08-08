@@ -11,7 +11,7 @@ const WebScrapingIntro = () => {
           Tired of messy scraping tools that slow you down? We make web data
           collection effortless, accurate, and tailored for your business needs.
         </p>
-        <button className="button1"> Talk to a Data Specialist</button>
+        <button className="button1 mb-20"> Talk to a Data Specialist</button>
       </div>
 
       <div className="mt-20 grid md:grid-cols-3 gap-10 text-left">

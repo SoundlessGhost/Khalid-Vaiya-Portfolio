@@ -8,7 +8,7 @@ import ClientTestimonials from "@/components/Solutions Components/Pricing Data/p
 
 const PricingDataPage = () => {
   return (
-    <div className="pt-28">
+    <div>
       <PricingDataHeroSection />
       <PricingDataSection />
       <PricingHighlights />

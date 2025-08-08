@@ -42,7 +42,7 @@ export function Resources() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <p className={` cursor-pointer text-sm rounded-md p-2 `}>
+            <p className={` cursor-pointer text-black text-sm rounded-md p-2 `}>
               Resources
             </p>
           </NavigationMenuTrigger>

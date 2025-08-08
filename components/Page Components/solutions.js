@@ -51,7 +51,7 @@ export function Solutions() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <p className={`cursor-pointer text-sm rounded-md p-2 `}>
+            <p className={`cursor-pointer text-black text-sm rounded-md p-2 `}>
               Solutions
             </p>
           </NavigationMenuTrigger>

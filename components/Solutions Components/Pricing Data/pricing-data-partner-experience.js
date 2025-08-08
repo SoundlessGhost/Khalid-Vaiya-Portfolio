@@ -1,5 +1,3 @@
-// components/PartnerExperience.jsx
-
 export default function PartnerExperience() {
   return (
     <section className="bg-gradient-to-r from-green-50 via-white to-green-100 py-20 px-6">
@@ -46,8 +44,8 @@ export default function PartnerExperience() {
               Strategic Partnership
             </h3>
             <p className="text-gray-600">
-              We dont just deliver data — we adapt with you, supporting
-              evolving needs to maximize long-term value and flexibility.
+              We dont just deliver data — we adapt with you, supporting evolving
+              needs to maximize long-term value and flexibility.
             </p>
           </div>
         </div>

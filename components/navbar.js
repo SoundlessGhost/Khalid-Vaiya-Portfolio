@@ -11,7 +11,7 @@ import { WebScraping } from "@/components/Page Components/web-scraping";
 export function Navbar() {
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 transition duration-300 bg-black text-white`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white border-b shadow-sm`}
     >
       <div className="flex items-center justify-between px-[64px] my-4">
         <div className="flex items-center space-x-4 justify-center">

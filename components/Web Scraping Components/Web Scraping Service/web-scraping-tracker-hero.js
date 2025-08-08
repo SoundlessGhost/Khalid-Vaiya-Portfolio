@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function PricingTrackerHero() {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-white mb-24 text-black">
       {/* Hero Section */}
       <section className="text-center py-16 px-6">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -20,7 +20,7 @@ export default function PricingTrackerHero() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="bg-green-100 py-12 px-6">
+      <section className="bg-green-100 py-12 px-6 mt-12">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
           <div className="flex-1 text-center md:text-left">
             <p className="text-lg italic text-gray-800 mb-4">

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ReusableComponent = () => {
   return (
-    <section className="bg-gray-50 py-12 px-6 md:px-16">
+    <section className="bg-gray-50 my-24 py-12 px-6 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Text Content */}
         <div className="flex-1">
