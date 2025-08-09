@@ -1,24 +1,24 @@
 import Image from "next/image";
 import React from "react";
 
-const RealEstateHeroSection = () => {
+const CustomizedDataHeroSection = () => {
   return (
     <section className="bg-gradient-to-br from-[#e6f4ea] to-[#fce4e4] pt-48 pb-28">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         {/* Left Side Content */}
         <div>
           <p className="text-red-500 font-semibold text-sm uppercase mb-2">
-            Real Estate Data Collection
+            Customized Data Collection Solution
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Reliable Data for
+            Tailored Data Solution that
             <br />
-            Real Estate Professionals
+            Power Your Business Success
           </h1>
           <p className="text-gray-700 text-lg mb-8">
-            Access real-time property listings, pricing trends, and market data
-            tailored to give you a competitive edge. Fastscraping provides
-            actionable insights for informed decision-making.
+            Fully managed web scraping service designed for seamless data
+            collection, tailored to your specific requirements, without the
+            hassle.
           </p>
           <div className="mt-10">
             <button className="button1 inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:-translate-y-0.5 hover:shadow">
@@ -39,7 +39,7 @@ const RealEstateHeroSection = () => {
         {/* Right Side Image */}
         <div className="flex justify-center">
           <Image
-            src="/images/Real Estate/Portfolio Update-bro.png"
+            src="/images/Customized Data/Advanced customization-amico.png"
             alt="Web scraping illustration"
             width={400}
             height={300}
@@ -51,4 +51,4 @@ const RealEstateHeroSection = () => {
   );
 };
 
-export default RealEstateHeroSection;
+export default CustomizedDataHeroSection;

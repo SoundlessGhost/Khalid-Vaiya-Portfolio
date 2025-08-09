@@ -150,7 +150,7 @@ function Flyout({ label, items }) {
 
   return (
     <div
-      className="relative"
+      className="relative p-2"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
@@ -159,15 +159,19 @@ function Flyout({ label, items }) {
         <span className="block h-px scale-x-0 bg-emerald-400 transition-all duration-300 group-hover:scale-x-100" />
       </button>
 
+      {open && <div className="absolute left-0 right-0 top-full h-2" />}
+
       {/* panel */}
       <div
         ref={boxRef}
-        className={`absolute left-1/2 z-50 mt-3 w-[420px] -translate-x-1/2 rounded-xl border border-white/10 bg-slate-900/70 p-3 backdrop-blur-xl shadow-2xl ring-1 ring-black/20
-        transition-all duration-200 ${
-          open
-            ? "opacity-100 translate-y-0"
-            : "pointer-events-none opacity-0 -translate-y-1"
-        }`}
+        className={`absolute left-1/2 top-full z-50 mt-1 w-[420px] -translate-x-1/2
+  rounded-xl border border-white/10 bg-slate-900/70 p-3 backdrop-blur-xl
+  shadow-2xl ring-1 ring-black/20 transition-all duration-200
+  ${
+    open
+      ? "opacity-100 translate-y-0"
+      : "pointer-events-none opacity-0 -translate-y-1"
+  }`}
       >
         <ul className="grid grid-cols-1 divide-y divide-white/5">
           {items.map((it) => (
