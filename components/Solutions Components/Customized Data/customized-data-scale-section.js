@@ -81,7 +81,7 @@ export default function DataScaleSection() {
           <div className="mt-8 relative">
             <div className="relative h-44 w-80 rounded-xl border border-emerald-300/60 bg-white shadow-md overflow-hidden">
               <Image
-                src="/mock/main-shot.png"
+                src="/Screenshort.png"
                 alt="dashboard"
                 fill
                 className="object-cover"
@@ -100,7 +100,7 @@ export default function DataScaleSection() {
               }}
             >
               <Image
-                src="/mock/chart.png"
+                src="/christin-hume-mfB1B1s4sMc-unsplash.jpg"
                 alt="chart"
                 fill
                 className="object-cover"
@@ -118,7 +118,7 @@ export default function DataScaleSection() {
               }}
             >
               <Image
-                src="/mock/card.png"
+                src="/christin-hume-mfB1B1s4sMc-unsplash.jpg"
                 alt="card"
                 fill
                 className="object-cover"
