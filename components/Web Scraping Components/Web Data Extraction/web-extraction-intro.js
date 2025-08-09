@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function WebExtraction() {
   return (
-    <section className="bg-white py-16 px-4 md:px-20">
+    <section className="bg-white pt-28 pb-10 px-4 md:px-20">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
         {/* Left Image */}
         <div className="md:w-1/2 w-full ">

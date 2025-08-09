@@ -1,99 +1,114 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
 
-function useReveal() {
-  const ref = useRef(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return ref;
-}
+import { motion } from "framer-motion";
 
-const WebScrapingServiceHeroSection = () => {
-  const leftRef = useReveal();
-  const rightRef = useReveal();
-
-  return (
-    <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-        {/* Left Side Content */}
-        <div
-          ref={leftRef}
-          className="opacity-0 translate-y-6 transition-all duration-700 ease-out [&&.is-visible]:opacity-100 [&&.is-visible]:translate-y-0"
-        >
-          <p className="text-red-500 font-semibold text-sm uppercase mb-2">
-            All the Web Data You Need In One Place
-          </p>
-
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Fully-Managed Web
-            <br />
-            Scraping Service
-          </h1>
-
-          <p className="text-gray-700 text-lg mb-8">
-            Collect accurate and reliable data from every corner of the
-            internet—make smarter business decisions and always stay one step
-            ahead of the competition.
-          </p>
-
-          <button className="button1 relative inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:-translate-y-0.5 hover:shadow">
-            Contact a Data Expert
-            <span className="absolute -bottom-1 left-6 right-6 h-[2px] origin-left scale-x-0 bg-gray-900/70 transition-transform duration-300 group-hover:scale-x-100" />
-          </button>
-        </div>
-
-        {/* Right Side Image */}
-        <div
-          ref={rightRef}
-          className="flex justify-center opacity-0 translate-y-6 transition-all duration-700 ease-out delay-150 [&&.is-visible]:opacity-100 [&&.is-visible]:translate-y-0"
-        >
-          <Image
-            src="/images/Web Scraping/Money.png"
-            alt="Web scraping illustration"
-            width={400}
-            height={300}
-            className="w-full max-w-md animate-float"
-            priority
-          />
-        </div>
-      </div>
-
-      {/* local keyframes for image float */}
-      <style jsx>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-8px);
-          }
-          100% {
-            transform: translateY(0px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-      `}</style>
-    </section>
-  );
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+  }),
 };
 
-export default WebScrapingServiceHeroSection;
+export default function WebScrapingServiceHeroSection() {
+  return (
+    <section className="relative overflow-hidden py-20 -mt-12">
+      {/* soft gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-emerald-100" />
+
+      {/* animated blobs */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-16 -left-16 h-72 w-72 rounded-full bg-emerald-300/30 blur-3xl"
+        animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-rose-300/20 blur-3xl"
+        animate={{ x: [0, -25, 15, 0], y: [0, 25, -15, 0] }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+        {/* Left: content */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          <motion.p
+            custom={0}
+            variants={fadeUp}
+            className="text-red-500 font-semibold text-sm uppercase mb-3 tracking-wide"
+          >
+            All the Web Data You Need In One Place
+          </motion.p>
+
+          <motion.h1
+            custom={1}
+            variants={fadeUp}
+            className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight"
+          >
+            Fully-Managed Web Scraping Service for Reliable, Scalable Data
+            Extraction
+          </motion.h1>
+
+          <motion.p
+            custom={2}
+            variants={fadeUp}
+            className="text-gray-700 text-lg mb-8"
+          >
+            Collect accurate, reliable, and comprehensive data from every
+            possible corner of the internet—covering websites, marketplaces,
+            social platforms, and more—so you can analyze trends, uncover hidden
+            opportunities, and make smarter, data-driven business decisions.
+          </motion.p>
+
+          <motion.div custom={3} variants={fadeUp}>
+            <button className="group inline-flex items-center gap-2 rounded-full border border-transparent bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 focus:outline-none">
+              Contact a Data Expert
+              <svg
+                viewBox="0 0 24 24"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+          </motion.div>
+        </motion.div>
+
+        {/* Right: Illustration Image */}
+        <motion.div
+          custom={1.5}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+          className="flex justify-center"
+        >
+          <motion.div
+            whileHover={{ scale: 1.03, rotate: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="rounded-xl shadow-lg overflow-hidden"
+          >
+            <Image
+              src="/images/Web Scraping/Money.png"
+              alt="Web scraping illustration"
+              width={420}
+              height={320}
+              className="w-full max-w-md"
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

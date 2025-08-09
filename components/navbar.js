@@ -210,8 +210,7 @@ export default function NavbarAnimated() {
         ${hidden ? "-translate-y-full" : "translate-y-0"}`}
       >
         <div
-          className={` px-4 sm:px-6 lg:px-8
-          rounded-b-xl border-b
+          className={` px-4 sm:px-6 lg:px-8 border-b
           ${
             elevated
               ? "bg-slate-900/70 backdrop-blur-xl border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]"

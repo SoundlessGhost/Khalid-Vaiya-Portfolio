@@ -9,8 +9,8 @@ const ExpertisePage = () => {
     <div className="pt-28">
       <ExpertiseHeroSection />
       <WhyChooseUs />
-      <AboutUsSection />
       <CaseStudySection />
+      <AboutUsSection />
     </div>
   );
 };

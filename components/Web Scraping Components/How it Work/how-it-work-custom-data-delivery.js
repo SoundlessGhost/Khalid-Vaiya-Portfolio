@@ -2,7 +2,7 @@ import { FaServer, FaEye, FaClipboardCheck, FaCogs } from "react-icons/fa";
 
 export default function CustomDataDelivery() {
   return (
-    <section className="bg-white pt-20 pb-32 px-6">
+    <section className="bg-white pt-28 pb-32 px-6">
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title */}
         <h2 className="text-4xl font-bold text-gray-900 mb-4">
