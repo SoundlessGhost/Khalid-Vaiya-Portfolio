@@ -1,3 +1,4 @@
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 import Footer from "@/components/footer";
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`${workSans.variable} font-sans antialiased`}>
         <NavbarAnimated />
         {children}
+        <ChatWidget />
         <Footer />
       </body>
     </html>
