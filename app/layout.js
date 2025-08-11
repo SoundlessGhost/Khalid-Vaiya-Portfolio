@@ -1,11 +1,11 @@
-import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 import Footer from "@/components/footer";
+import ChatWidget from "@/components/ChatWidget";
 import NavbarAnimated from "@/components/navbar";
 
-import { Work_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import { Work_Sans } from "next/font/google";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
