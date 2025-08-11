@@ -76,7 +76,7 @@ export default function ChatWidget() {
       {/* Panel */}
       {open && (
         <div
-          className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[92vw] animate-slideUp"
+          className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[92vw] animate-slideUp"
           role="dialog"
           aria-modal="true"
         >
