@@ -34,7 +34,7 @@ export default function ExpertiseHeroSection() {
         transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div className="relative max-w-9xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         {/* left content */}
         <motion.div
           initial="hidden"

@@ -1,3 +1,4 @@
+import AnimatedHero from "@/components/AnimatedHero";
 import React from "react";
 
 const caseStudies = [
@@ -27,27 +28,12 @@ const caseStudies = [
 const CaseStudy = () => {
   return (
     <div>
-      <div
-        className="flex pb-32 pt-40  text-black bg-gradient-to-br from-[#e6f4ea] to-[#fce4e4]
-      relative overflow-hidden text-center justify-center items-center"
-      >
-        <div>
-          <h1 className="text-5xl font-bold mb-10">
-            <span>Case Study</span>
-          </h1>
-          <p className="text-sm max-w-2xl mx-auto">
-            Explore in-depth case studies that reveal how Fastscraping has
+      <AnimatedHero
+        title="Case Study"
+        subtitle="Explore in-depth case studies that reveal how Fastscraping has
             helped top manufacturers, retailers, and global enterprises tackle
-            complex data challenges with precision. Our tailored solutions have
-            empowered organizations to streamline operations, enhance
-            decision-making, and maintain a competitive edge in rapidly evolving
-            markets. See how data-driven transformation becomes a reality—with
-            measurable results.
-          </p>
-        </div>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#1E1F4B] rounded-full opacity-30 transform translate-x-1/2 -translate-y-1/2 z-0"></div>
-      </div>
-
+            complex data challenges with precision."
+      />
       {/* case study section */}
 
       <section className="bg-gray-50 py-40">

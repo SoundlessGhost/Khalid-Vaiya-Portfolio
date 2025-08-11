@@ -1,13 +1,64 @@
 import Link from "next/link";
 
 export default function Footer() {
+  const columns = [
+    {
+      title: "Web Scraping",
+      links: [
+        { href: "/expertise", label: "Expertise" },
+        { href: "/how-it-works", label: "How It Works" },
+        { href: "/web-data-extraction", label: "Web Data Extraction" },
+        { href: "/web-scraping-service", label: "Web Scraping Service" },
+        { href: "/competitor-price-data", label: "Competitor Price Data" },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        { href: "/pricing-data", label: "Pricing Data" },
+        { href: "/product-data", label: "Product Data" },
+        { href: "/customized-data", label: "Customized Data" },
+        { href: "/real-estate-data", label: "Real Estate Data" },
+        { href: "/job-listings-data", label: "Job Listings Data" },
+      ],
+    },
+    {
+      title: "About",
+      links: [
+        { href: "/company", label: "Company" },
+        { href: "/customers", label: "Customers" },
+        { href: "/support", label: "Support" },
+        { href: "/contact", label: "Contact" },
+        { href: "/price", label: "Price" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { href: "/e-book", label: "Ebooks" },
+        { href: "/articles", label: "Articles" },
+        { href: "/white-papers", label: "White Papers" },
+        { href: "/case-studies", label: "Case Studies" },
+        { href: "/privacy-policy", label: "Privacy Policy" },
+        { href: "/terms", label: "Terms & Conditions" },
+      ],
+    },
+    {
+      title: "Get in touch",
+      links: [
+        { href: "https://linkedin.com", label: "LinkedIn" },
+        { href: "https://facebook.com", label: "Facebook" },
+        { href: "https://youtube.com", label: "Youtube" },
+      ],
+    },
+  ];
+
   return (
     <footer className="relative overflow-hidden">
-      {/* background: dark gradient + soft grid + glow */}
+      {/* background layers */}
       <div className="absolute inset-0 -z-10 bg-[#0a0f1a]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(700px_300px_at_70%_-10%,rgba(99,102,241,.18),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(600px_280px_at_15%_120%,rgba(16,185,129,.18),transparent_60%)]" />
-      {/* grid overlay */}
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[.35] mix-blend-soft-light
                       bg-[linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)]
@@ -18,7 +69,7 @@ export default function Footer() {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent opacity-60" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        {/* CTA strip – optional, matches hero */}
+        {/* CTA strip */}
         <div className="mb-12 rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur-sm px-6 py-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
@@ -41,54 +92,11 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* footer columns */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 text-sm">
-          {/* Web Scraping */}
-          <FooterCol title="Web Scraping">
-            <FooterLink>Web Scraping Service</FooterLink>
-            <FooterLink>Expertise</FooterLink>
-            <FooterLink>Enterprise Web Scraping</FooterLink>
-            <FooterLink>Data From the Web</FooterLink>
-            <FooterLink>Competitor Price Data</FooterLink>
-            <FooterLink>Solution</FooterLink>
-            <FooterLink>Web Data Extraction</FooterLink>
-            <FooterLink>Data Collection</FooterLink>
-          </FooterCol>
-
-          {/* Solutions */}
-          <FooterCol title="Solutions">
-            <FooterLink>Pricing Data</FooterLink>
-            <FooterLink>Product Data</FooterLink>
-            <FooterLink>Data for AI</FooterLink>
-            <FooterLink>Real Estate Data</FooterLink>
-            <FooterLink>Job Listings Data</FooterLink>
-            <FooterLink>Customized Data</FooterLink>
-          </FooterCol>
-
-          {/* About */}
-          <FooterCol title="About">
-            <FooterLink>Company</FooterLink>
-            <FooterLink>Customers</FooterLink>
-            <FooterLink>Support</FooterLink>
-            <FooterLink>Contact</FooterLink>
-            <FooterLink>Price</FooterLink>
-          </FooterCol>
-
-          {/* Resources */}
-          <FooterCol title="Resources">
-            <FooterLink>Articles</FooterLink>
-            <FooterLink>Ebooks</FooterLink>
-            <FooterLink>White Papers</FooterLink>
-            <FooterLink>Case Studies</FooterLink>
-            <FooterLink>Privacy Policy</FooterLink>
-            <FooterLink>Terms & Conditions</FooterLink>
-          </FooterCol>
-
-          {/* Get in touch */}
-          <FooterCol title="Get in touch">
-            <FooterLink>LinkedIn</FooterLink>
-            <FooterLink>Facebook</FooterLink>
-            <FooterLink>Twitter</FooterLink>
-          </FooterCol>
+          {columns.map((col) => (
+            <FooterCol key={col.title} title={col.title} links={col.links} />
+          ))}
         </div>
 
         {/* divider */}
@@ -99,24 +107,9 @@ export default function Footer() {
             © 2025 Fastscraping Inc. All Rights Reserved.
           </p>
           <div className="flex items-center gap-6 text-xs">
-            <Link
-              href="#"
-              className="text-white/60 hover:text-white/90 transition"
-            >
-              Status
-            </Link>
-            <Link
-              href="#"
-              className="text-white/60 hover:text-white/90 transition"
-            >
-              Security
-            </Link>
-            <Link
-              href="#"
-              className="text-white/60 hover:text-white/90 transition"
-            >
-              Cookie Settings
-            </Link>
+            <FooterLink href="#">Status</FooterLink>
+            <FooterLink href="#">Security</FooterLink>
+            <FooterLink href="#">Cookie Settings</FooterLink>
           </div>
         </div>
       </div>
@@ -125,24 +118,29 @@ export default function Footer() {
 }
 
 /* ---------- small helpers ---------- */
-
-function FooterCol({ title, children }) {
+function FooterCol({ title, links }) {
   return (
     <div>
       <h3 className="text-white font-semibold mb-3 inline-flex items-center gap-2">
         {title}
         <span className="h-0.5 w-6 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400" />
       </h3>
-      <ul className="space-y-2">{children}</ul>
+      <ul className="space-y-2">
+        {links.map((link) => (
+          <FooterLink key={link.href} href={link.href}>
+            {link.label}
+          </FooterLink>
+        ))}
+      </ul>
     </div>
   );
 }
 
-function FooterLink({ children }) {
+function FooterLink({ href, children }) {
   return (
     <li>
       <Link
-        href="#"
+        href={href}
         className="text-white/70 hover:text-emerald-300 transition
                    inline-flex items-center gap-2 group"
       >

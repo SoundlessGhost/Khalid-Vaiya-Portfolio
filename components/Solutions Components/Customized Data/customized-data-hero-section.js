@@ -4,7 +4,7 @@ import React from "react";
 const CustomizedDataHeroSection = () => {
   return (
     <section className="bg-gradient-to-br from-[#e6f4ea] to-[#fce4e4] pt-48 pb-28">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-9xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         {/* Left Side Content */}
         <div>
           <p className="text-red-500 font-semibold text-sm uppercase mb-2">

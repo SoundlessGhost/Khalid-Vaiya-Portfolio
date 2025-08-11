@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Scale,
@@ -18,7 +18,6 @@ import {
   BadgeDollarSign,
 } from "lucide-react";
 
-/* ---------- tiny hooks ---------- */
 function useScrollNav() {
   const [hidden, setHidden] = useState(false);
   const [elevated, setElevated] = useState(false);

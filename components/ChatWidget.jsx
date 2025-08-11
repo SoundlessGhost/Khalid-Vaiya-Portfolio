@@ -134,7 +134,7 @@ export default function ChatWidget() {
                 <label className="text-xs text-white/70">Email</label>
                 <input
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value.toLocaleLowerCase())}
                   type="email"
                   className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm text-white placeholder-white/40 outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400/40"
                   placeholder="Your email"

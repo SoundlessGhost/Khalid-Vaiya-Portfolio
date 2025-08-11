@@ -121,32 +121,6 @@
   }
 }
 
-.button {
-  position: relative;
-  padding: 10px 20px;
-  color: white;
-  border-bottom: 1px solid white;
-  cursor: pointer;
-  font-size: 16px;
-  overflow: hidden;
-  outline: none;
-}
-
-.button:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -100%;
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  transition: all 0.3s;
-}
-
-.button:hover:after {
-  left: 0;
-}
-
 .button1 {
   position: relative;
   padding: 10px 20px;
@@ -172,4 +146,111 @@
 
 .button1:hover:after {
   left: 0;
+}
+
+@keyframes gridPan {
+  from {
+    background-position: 0px 0px, 0px 0px;
+  }
+  to {
+    background-position: 80px 40px, 40px 80px;
+  }
+}
+
+@keyframes sweep {
+  from {
+    transform: rotate(0deg) scale(1.05);
+  }
+  to {
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes float-slower {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-sweep {
+  animation: sweep 22s linear infinite;
+}
+.animate-float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: float-slower 12s ease-in-out infinite;
+}
+.animate-bob {
+  animation: bob 4.5s ease-in-out infinite;
+}
+
+/* image shine sweep */
+@keyframes shine {
+  0% {
+    transform: translateX(-120%) rotate(12deg);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(320%) rotate(12deg);
+    opacity: 0;
+  }
+}
+.animate-shine {
+  animation: shine 1.8s ease-out 1 forwards;
+}
+
+/* reveal on scroll (once) */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.7s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 10% cover 25%;
+}
+/* Fallback for browsers without view-timeline support */
+@supports not (animation-timeline: view()) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
