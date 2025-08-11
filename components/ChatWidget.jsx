@@ -47,36 +47,41 @@ export default function ChatWidget() {
   return (
     <>
       {/* Floating Launcher – emerald/teal to match navbar/hero */}
-      <button
-        aria-label="Open contact chat"
-        onClick={() => setOpen(!open)}
-        className={`fixed cursor-pointer bottom-6 right-6 z-[60] h-14 w-14 rounded-2xl
+
+      {open ? (
+        ""
+      ) : (
+        <button
+          aria-label="Open contact chat"
+          onClick={() => setOpen(!open)}
+          className={`fixed cursor-pointer bottom-6 right-6 z-[60] h-14 w-14 rounded-2xl
           bg-gradient-to-br from-emerald-500 to-cyan-500 text-white
           shadow-[0_10px_30px_rgba(16,185,129,0.35)] grid place-items-center transition active:scale-95
           ring-1 ring-white/10 ${open ? "" : "animate-breathe"}`}
-      >
-        <div className="relative p-1">
-          {/* chat icon smaller */}
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M21 12a8 8 0 1 1-3.2-6.4L22 4l-1 4.1A7.9 7.9 0 0 1 21 12Z"
-              stroke="white"
-              strokeWidth="1.6"
-            />
-            <circle cx="9" cy="12" r="1" fill="white" />
-            <circle cx="13" cy="12" r="1" fill="white" />
-            <circle cx="17" cy="12" r="1" fill="white" />
-          </svg>
-          {!open && (
-            <span className="absolute -right-2 -top-2 h-2.5 w-2.5 rounded-full bg-lime-400 animate-ping" />
-          )}
-        </div>
-      </button>
+        >
+          <div className="relative p-1">
+            {/* chat icon smaller */}
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21 12a8 8 0 1 1-3.2-6.4L22 4l-1 4.1A7.9 7.9 0 0 1 21 12Z"
+                stroke="white"
+                strokeWidth="1.6"
+              />
+              <circle cx="9" cy="12" r="1" fill="white" />
+              <circle cx="13" cy="12" r="1" fill="white" />
+              <circle cx="17" cy="12" r="1" fill="white" />
+            </svg>
+            {!open && (
+              <span className="absolute -right-2 -top-2 h-2.5 w-2.5 rounded-full bg-lime-400 animate-ping" />
+            )}
+          </div>
+        </button>
+      )}
 
       {/* Panel */}
       {open && (
         <div
-          className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[92vw] animate-slideUp"
+          className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[92vw] animate-slideUp"
           role="dialog"
           aria-modal="true"
         >

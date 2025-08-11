@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import NavbarAnimated from "@/components/navbar";
 
 import { Work_Sans } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={`${workSans.variable} font-sans antialiased`}>
         <NavbarAnimated />
         {children}
+        <Toaster position="bottom-center" reverseOrder={false} />
         <ChatWidget />
         <Footer />
       </body>
