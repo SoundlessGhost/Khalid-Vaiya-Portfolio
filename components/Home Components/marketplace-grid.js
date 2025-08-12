@@ -1,83 +1,84 @@
 "use client";
 import React from "react";
 import {
-  Music,
-  MapPin,
-  Instagram,
-  Globe,
   ShoppingCart,
-  FlaskConical,
   Users,
   StarIcon,
+  Ticket,
+  Hamburger,
+  BriefcaseBusiness,
+  HousePlus,
+  Cog,
 } from "lucide-react";
 
 export default function MarketplaceGrid() {
   const items = [
     {
-      id: "tiktok",
-      title: "TikTok Scraper",
+      id: "1",
+      title: "Ticketing Website Pricing Data",
+
       slug: "clockworks/tiktok-scraper",
       description:
-        "Extract data from TikTok videos, hashtags, and users. Use URLs or search queries to scrape...",
+        "Access real-time event and ticketing insights from StubHub, SeatGeek, and Vivid Seats. Includes event details, live pricing updates, daily stock changes, and demand tracking for resellers and analysts.",
       author: "Clockworks",
       users: "57K",
       rating: 4.4,
-      icon: <Music className="h-6 w-6 text-emerald-600" />,
+      icon: <Ticket className="h-6 w-6 text-emerald-600" />,
     },
     {
-      id: "gmaps",
-      title: "Google Maps Scraper",
+      id: "2",
+      title: "Restaurant & Food Menu Pricing Data",
       slug: "compass/crawler-google-places",
       description:
-        "Extract data from thousands of Google Maps locations and businesses, including reviews,...",
+        "Track weekly menu and pricing changes from Starbucks, McDonald's, Subway, and Wendy's. Get product details, sub-menu structures, combo pricing, and historical price trends.",
       author: "Compass",
       users: "143K",
       rating: 4.2,
-      icon: <MapPin className="h-6 w-6 text-emerald-600" />,
+      icon: <Hamburger className="h-6 w-6 text-emerald-600" />,
     },
     {
-      id: "instagram",
-      title: "Instagram Scraper",
+      id: "3",
+      title: "E-Commerce Pricing & Inventory Data",
       slug: "apify/instagram-scraper",
       description:
-        "Scrape and download Instagram posts, profiles, places, hashtags, photos, and comments. Get...",
+        "Extract product information, prices, discounts, reviews, and stock levels from top e-commerce platforms. Ideal for price monitoring, competitor tracking, and inventory optimization.",
       author: "Apify",
       users: "120K",
       rating: 4.1,
-      icon: <Instagram className="h-6 w-6 text-emerald-600" />,
-    },
-    {
-      id: "crawler",
-      title: "Website Content Crawler",
-      slug: "apify/website-content-crawler",
-      description:
-        "Crawl websites and extract text content to feed AI models, LLM apps, vector databases, or...",
-      author: "Apify",
-      users: "67K",
-      rating: 4.3,
-      icon: <Globe className="h-6 w-6 text-emerald-600" />,
-    },
-    {
-      id: "amazon",
-      title: "Amazon Scraper",
-      slug: "junglee/free-amazon-product-scraper",
-      description:
-        "Gets you product data from Amazon. Unofficial API. Scrapes and downloads product information...",
-      author: "Junglee",
-      users: "7.6K",
-      rating: 4.3,
       icon: <ShoppingCart className="h-6 w-6 text-emerald-600" />,
     },
     {
-      id: "build",
-      title: "Build your own Actor",
+      id: "4",
+      title: "Job Listing Data",
+      slug: "apify/website-content-crawler",
+      description:
+        "Collect weekly job postings from LinkedIn, Indeed, and Glassdoor. Includes job title, location, salary range, required skills, posting dates, and employer details for recruitment intelligence.",
+      author: "Apify",
+      users: "67K",
+      rating: 4.3,
+      icon: <BriefcaseBusiness className="h-6 w-6 text-emerald-600" />,
+    },
+    {
+      id: "5",
+      title: "Real Estate Listing Data",
+      slug: "junglee/free-amazon-product-scraper",
+      description:
+        "Monitor property listings, price changes, new listings, and agent contact details. Perfect for property investors, brokers, and real estate analytics.",
+      author: "Junglee",
+      users: "7.6K",
+      rating: 4.3,
+      icon: <HousePlus className="h-6 w-6 text-emerald-600" />,
+    },
+    {
+      id: "6",
+      title: "Custom Data Solutions",
       slug: "you/new-idea",
       description:
-        "Apify gives you all the tools and documentation you need to build reliable scrapers. Fast.",
+        "Need something unique? We scrape any public website for price monitoring, inventory checks, and large-scale repetitive task automation. Fully managed and protected against all major anti-bot systems.",
       author: "You?",
       users: "—",
       rating: 5.0,
-      icon: <FlaskConical className="h-6 w-6 text-emerald-600" />,
+      icon: <Cog className="h-6 w-6 text-emerald-600" />,
     },
   ];
 
@@ -87,13 +88,15 @@ export default function MarketplaceGrid() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:18px_18px]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-gradient-to-b from-emerald-50/60 to-transparent" />
       <div className="mx-auto max-w-6xl px-5 py-12 md:py-16">
-        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
-          Popular Scrapers
-        </h2>
-        <p className="mt-2 text-gray-600">
-          Explore ready-to-use actors and data tools. Click any card to learn
-          more.
-        </p>
+        <div className="text-center my-12">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+            Popular Scrapers
+          </h2>
+          <p className="mt-2 text-gray-600">
+            Explore ready-to-use actors and data tools. Click any card to learn
+            more.
+          </p>
+        </div>
 
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
@@ -102,7 +105,7 @@ export default function MarketplaceGrid() {
               className="group cursor-pointer relative rounded-xl border border-gray-200 bg-white/80 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-gray-300"
             >
               {/* header */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-gray-100">
                   {it.icon}
                 </div>
@@ -110,7 +113,7 @@ export default function MarketplaceGrid() {
                   <h3 className="text-base font-semibold text-gray-900">
                     {it.title}
                   </h3>
-                  <p className="text-xs text-gray-500">{it.slug}</p>
+                  {/* <p className="text-xs text-gray-500">{it.slug}</p> */}
                 </div>
               </div>
 

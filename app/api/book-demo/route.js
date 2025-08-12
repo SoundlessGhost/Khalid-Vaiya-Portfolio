@@ -3,24 +3,20 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     const body = await req.json();
+
     const name = String(body.name || "").trim();
-    const company = String(body.company || "").trim();
-    const email = String(body.email || "")
+    const email = String(body.email || body.workEmail || "")
       .trim()
       .toLowerCase();
     const message = String(body.message || "").trim();
+    const company = String(body.company || "").trim(); // optional
 
-    if (
-      !name ||
-      !company ||
-      !email ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-    ) {
+    if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
     }
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    const TO_EMAIL = process.env.TO_EMAIL;
+    const TO_EMAIL = "shahedmk47@gmail.com";
 
     if (!RESEND_API_KEY || !TO_EMAIL) {
       console.warn("Missing RESEND_API_KEY or TO_EMAIL; logging instead.");
@@ -35,13 +31,13 @@ export async function POST(req) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Bookings <bookings@yourdomain.com>",
+        from: "onboarding@resend.dev", // keep this until your domain is verified
         to: [TO_EMAIL],
         subject: "New Demo Booking",
         html: `
           <h2>New Demo Booking</h2>
           <p><b>Name:</b> ${escapeHtml(name)}</p>
-          <p><b>Company:</b> ${escapeHtml(company)}</p>
+          ${company ? `<p><b>Company:</b> ${escapeHtml(company)}</p>` : ""}
           <p><b>Email:</b> ${escapeHtml(email)}</p>
           <p><b>Message:</b><br/>${escapeHtml(message || "-")}</p>
         `,
@@ -50,8 +46,11 @@ export async function POST(req) {
 
     if (!res.ok) {
       const txt = await res.text();
-      console.error("Resend error", txt);
-      return NextResponse.json({ error: "Email failed" }, { status: 500 });
+      console.error("Resend error", res.status, txt);
+      return NextResponse.json(
+        { error: `Email failed: ${res.status} ${txt}` },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ ok: true }, { status: 200 });
@@ -62,7 +61,7 @@ export async function POST(req) {
 }
 
 function escapeHtml(s) {
-  return s
+  return String(s)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")

@@ -1,9 +1,18 @@
 "use client";
 
-import { useRef } from "react";
-import { ArrowRight, Zap, Database, Globe, Shield } from "lucide-react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import {
+  ArrowRight,
+  Zap,
+  Database,
+  Globe,
+  Shield,
+  ShieldCheck,
+  ShieldOff,
+} from "lucide-react";
 
 const floatingIcons = [
   { icon: Database, delay: 0, x: 100, y: 50 },
@@ -114,7 +123,7 @@ export default function HeroSection() {
             className="mt-6 text-gray-300 text-base md:text-lg space-y-1.5"
           >
             <p>
-              We deliver structured data at large scale—no Cloudflare, no
+              We deliver structured data at large scale - no Cloudflare, no
               captchas,
             </p>
             <p>
@@ -125,7 +134,7 @@ export default function HeroSection() {
           <div className="flex items-center mt-8">
             <div className="flex items-center mr-6">
               <div className="flex justify-center  mr-3">
-                <Database className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <ShieldOff className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
               </div>
               <div className="text-gray-400 font-medium text-sm">
                 Bypass Cloudflare <br /> & Captchas
@@ -134,7 +143,7 @@ export default function HeroSection() {
 
             <div className="flex items-center  mr-6">
               <div className="flex justify-center mr-3">
-                <Shield className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <Database className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
               </div>
               <div className="text-gray-400 font-medium text-sm">
                 Large-Scale On <br /> Demand Scraping
@@ -142,7 +151,7 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center  mr-6">
               <div className="flex justify-center mr-3">
-                <Globe className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <ShieldCheck className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
               </div>
               <div className="text-gray-400 font-medium text-sm">
                 No Proxy or <br /> Maintenance Hassle

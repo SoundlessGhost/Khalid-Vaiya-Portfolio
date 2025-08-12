@@ -21,7 +21,7 @@ export default function StartYourDataPipeline() {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden mt-20">
       {/* bg */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-50 via-rose-50 to-white" />
       {/* soft blobs */}
