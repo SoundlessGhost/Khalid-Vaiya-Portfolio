@@ -247,12 +247,6 @@ export default function NavbarAnimated() {
             {/* CTA + mobile */}
             <div className="flex items-center gap-3">
               <TermsGatedForm />
-              {/* <Link
-                href="/book-demo"
-                className="hidden sm:inline-flex items-center rounded-full bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-500"
-              >
-                Book a Demo
-              </Link> */}
               <button
                 className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/5 text-white ring-1 ring-white/10"
                 onClick={() => setMobile((s) => !s)}
@@ -314,13 +308,11 @@ export default function NavbarAnimated() {
             About
           </Link>
 
-          <Link
-            href="/book-demo"
-            onClick={() => setMobile(false)}
-            className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white"
-          >
-            Book a Demo
-          </Link>
+          <TermsGatedForm
+            beforeOpen={() => setMobile(false)}
+            buttonClassName="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white"
+            label="Book a Demo"
+          />
         </div>
       </div>
     </>

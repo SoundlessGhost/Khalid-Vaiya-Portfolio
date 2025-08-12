@@ -24,14 +24,14 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
 const FormSchema = z.object({
+  company: z.string().min(1, "Company is required."),
   lastName: z.string().min(1, "Last name is required."),
   message: z.string().min(5, "Please add a few details."),
   firstName: z.string().min(1, "First name is required."),
   workEmail: z.string().email("Please enter a valid work email."),
-  company: z.string().min(1, "Company is required."),
 });
 
-export default function TermsThenFormInDialog() {
+export default function TermsThenFormInDialog({ beforeOpen, buttonClassName }) {
   const [formOpen, setFormOpen] = React.useState(false);
   const [termsOpen, setTermsOpen] = React.useState(false);
 
@@ -91,12 +91,18 @@ export default function TermsThenFormInDialog() {
   return (
     <div className="mx-auto max-w-xl space-y-6 p-6">
       {/* Trigger */}
-      <Button
-        className="hidden cursor-pointer sm:inline-flex items-center rounded-full bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-500"
-        onClick={() => setTermsOpen(true)}
+      <button
+        className={
+          buttonClassName ??
+          "hidden cursor-pointer sm:inline-flex items-center rounded-full bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-500"
+        }
+        onClick={() => {
+          beforeOpen?.();
+          setTermsOpen(true);
+        }}
       >
         Book a Demo
-      </Button>
+      </button>
 
       {/* TERMS DIALOG */}
       <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
