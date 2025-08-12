@@ -17,6 +17,7 @@ import {
   Briefcase,
   BadgeDollarSign,
 } from "lucide-react";
+import TermsGatedForm from "./TermsGatedForm";
 
 function useScrollNav() {
   const [hidden, setHidden] = useState(false);
@@ -245,12 +246,13 @@ export default function NavbarAnimated() {
 
             {/* CTA + mobile */}
             <div className="flex items-center gap-3">
-              <Link
+              <TermsGatedForm />
+              {/* <Link
                 href="/book-demo"
                 className="hidden sm:inline-flex items-center rounded-full bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-500"
               >
                 Book a Demo
-              </Link>
+              </Link> */}
               <button
                 className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/5 text-white ring-1 ring-white/10"
                 onClick={() => setMobile((s) => !s)}

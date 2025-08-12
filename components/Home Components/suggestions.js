@@ -58,7 +58,7 @@ const items = [
 
 export default function JobDataProblemsAnimated() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-white to-slate-50">
+    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-white to-white">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">

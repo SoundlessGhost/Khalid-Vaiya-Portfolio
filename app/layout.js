@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body className={`${workSans.variable} font-sans antialiased`}>
         <NavbarAnimated />
         {children}
-        <Toaster position="bottom-center" reverseOrder={false} />
+        <Toaster position="top-center" reverseOrder={false} />
         <ChatWidget />
         <Footer />
       </body>

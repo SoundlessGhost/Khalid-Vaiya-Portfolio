@@ -4,6 +4,8 @@ import FastScrapingService from "@/components/Home Components/fastscraping-servi
 import DataExtractionService from "@/components/Home Components/data-extraction-service";
 
 import { AccordionDemo } from "@/components/Home Components/frequently-asked-questions";
+import StartYourDataPipeline from "@/components/Home Components/start-your-data-pipeline";
+import MarketplaceGrid from "@/components/Home Components/marketplace-grid";
 
 export default function Home() {
   return (
@@ -11,7 +13,9 @@ export default function Home() {
       <HeroSection />
 
       <JobDataProblemsAnimated />
-
+      <StartYourDataPipeline />
+      <MarketplaceGrid />
+      
       <FastScrapingService />
 
       <DataExtractionService />
