@@ -100,14 +100,10 @@ export default function HeroSection() {
             className="text-white leading-tight font-bold"
           >
             <span className="block text-5xl md:text-6xl">
-              Effective Web Scraping
+              Your Own Web Scraping
             </span>
-            <span className="block text-5xl md:text-6xl">
-              Solutions That Deliver
-            </span>
-            <span className="block text-5xl md:text-6xl">
-              Measurable Results
-            </span>
+            <span className="block text-5xl md:text-6xl">Team on Demand</span>
+            {/* <span className="block text-5xl md:text-6xl"></span> */}
           </motion.h1>
 
           {/* Subtitle */}
@@ -117,10 +113,10 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.55 }}
             className="mt-6 text-gray-300 text-base md:text-lg space-y-1.5"
           >
-            <p>Make unlimited requests without getting blocked.</p>
+            <p>We deliver structured data at large scale—no Cloudflare,</p>
             <p>
-              Our infrastructure keeps your scraping invisible to detection
-              systems.
+              no captchas, no blocks, no maintenance. Just tell us what you need
+              we&apos;ll handle everything.
             </p>
           </motion.div>
 
