@@ -48,11 +48,11 @@ export default function EbookPromo() {
       {/* Right Image Section */}
       <div className="lg:w-1/2">
         <Image
-          src="/images/Editorial commision.png"
+          src="/images/Competitor Price/Editorial commision.png"
           alt="Ebook Illustration"
           width={500}
           height={400}
-          className="w-full h-auto"
+          className="w-[60%] h-auto"
         />
       </div>
     </section>

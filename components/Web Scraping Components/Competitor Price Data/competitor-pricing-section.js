@@ -9,7 +9,7 @@ export default function CompetitorPricingSection() {
           alt="Business competition "
           width={400}
           height={300}
-          className="w-full h-auto"
+          className="w-[60%] h-auto"
         />
       </div>
 

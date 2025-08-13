@@ -21,7 +21,7 @@ export default function FeaturesGrid() {
     <section className="w-full">
       <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
         <p className="text-center text-sm text-gray-600">
-          Explore all the features of our Web service.
+          Explore all the features of our fastscraping web service.
         </p>
 
         <div className="relative mt-6 rounded-xl border border-gray-200 bg-gradient-to-b from-white to-gray-50">
