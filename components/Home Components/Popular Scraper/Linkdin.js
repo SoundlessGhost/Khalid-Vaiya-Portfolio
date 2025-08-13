@@ -6,7 +6,7 @@ import { ROWS } from "@/lib/amazon-data";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ArrowLeftRight, Filter, ListFilter } from "lucide-react";
+import { ArrowLeftRight, ListFilter } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   DropdownMenu,
@@ -44,7 +44,7 @@ const dataWithStatus = ROWS.map((r, i) => ({
   status: ["Success", "Failed", "Processing"][i % 3],
 }));
 
-export default function PricingLanding() {
+export default function Linkdin() {
   // left hero copy (like screenshot #1)
   const bullets = [
     {
@@ -112,22 +112,18 @@ export default function PricingLanding() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* LEFT: copy */}
           <div>
-            {/* <Badge variant="secondary" className="mb-4">
-              Free Ebook
-            </Badge> */}
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-              5 Key Factors to
-              <br />
-              Successful Competitor
-              <br />
-              Price Data Collection
-            </h1>
+            <Badge variant="secondary" className="mb-4">
+              Linkdin
+            </Badge>
+            <p className=" uppercase text-3xl md:text-4xl font-bold text-neutral-700 mb-4">
+              Linkdin Successful <br /> Price Data Collection
+            </p>
             <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-xl">
               Discover the tools and strategies that will take your pricing
               expertise to the next level.
             </p>
 
-            <ul className="space-y-6">
+            <ul className="space-y-6 pb-10">
               {bullets.map((b) => (
                 <li key={b.title}>
                   <p className="font-semibold mb-1">{b.title}</p>
@@ -136,16 +132,16 @@ export default function PricingLanding() {
               ))}
             </ul>
 
-            {/* <Button size="lg" className="rounded-2xl">
+            <Button size="lg" className="rounded-2xl">
               Read Free Ebook
-            </Button> */}
+            </Button>
           </div>
 
           {/* RIGHT: replaces video with a scrollable, wide table */}
           <Card className="shadow-xl rounded-2xl">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-between">
-                <span>Amazon Data sheet File</span>
+                <span>Linkdin Data sheet File</span>
                 <ArrowLeftRight className="h-5 w-5 opacity-70" />
               </CardTitle>
             </CardHeader>

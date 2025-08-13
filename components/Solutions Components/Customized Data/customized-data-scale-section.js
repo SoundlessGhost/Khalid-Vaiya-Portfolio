@@ -81,7 +81,7 @@ export default function DataScaleSection() {
           <div className="mt-8 relative">
             <div className="relative h-44 w-80 rounded-xl border border-emerald-300/60 bg-white shadow-md overflow-hidden">
               <Image
-                src="/Screenshort.png"
+                src="/coding-python.png"
                 alt="dashboard"
                 fill
                 className="object-cover"
@@ -89,16 +89,7 @@ export default function DataScaleSection() {
             </div>
 
             {/* floating chips */}
-            <motion.div
-              className="absolute -left-6 -top-6 h-20 w-32 overflow-hidden rounded-xl border bg-white shadow"
-              animate={{ y: [0, -8, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.2,
-              }}
-            >
+            <motion.div className="absolute -left-6 -top-6 h-20 w-32 overflow-hidden rounded-xl border bg-white shadow">
               <Image
                 src="/christin-hume-mfB1B1s4sMc-unsplash.jpg"
                 alt="chart"
@@ -107,36 +98,18 @@ export default function DataScaleSection() {
               />
             </motion.div>
 
-            <motion.div
-              className="absolute -right-5 top-4 h-24 w-36 overflow-hidden rounded-xl border bg-white shadow"
-              animate={{ y: [0, 7, 0] }}
-              transition={{
-                duration: 4.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.6,
-              }}
-            >
+            <motion.div className="absolute -right-5 top-4 h-24 w-36 overflow-hidden rounded-xl border bg-white shadow">
               <Image
-                src="/christin-hume-mfB1B1s4sMc-unsplash.jpg"
+                src="/Screenshot.png"
                 alt="card"
                 fill
                 className="object-cover"
               />
             </motion.div>
 
-            <motion.div
-              className="absolute left-10 -bottom-10 h-24 w-24 overflow-hidden rounded-xl border bg-white shadow"
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1.1,
-              }}
-            >
+            <motion.div className="absolute left-10 -bottom-10 h-24 w-24 overflow-hidden rounded-xl border bg-white shadow">
               <Image
-                src="/mock/thumb.png"
+                src="/images/Articles/Articles1.jpg"
                 alt="thumb"
                 fill
                 className="object-cover"
