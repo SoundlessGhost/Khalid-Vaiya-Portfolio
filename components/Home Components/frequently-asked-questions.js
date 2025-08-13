@@ -22,23 +22,24 @@ export function AccordionDemo() {
   return (
     <section className="my-20">
       {/* Section background + header animation */}
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           className="text-center text-3xl md:text-4xl font-bold text-neutral-700"
         >
-          Frequently Asked Questions
+          Frequently Asked Questions About Fastscraping Web Services
         </motion.h2>
 
-        <motion.div
-          initial={{ scaleX: 0, opacity: 0.4 }}
-          whileInView={{ scaleX: 1, opacity: 1 }}
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto mt-4 h-1 w-28 origin-left rounded-full bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-500"
-        />
+          className="text-center mt-2 text-gray-500 text-sm"
+        >
+          Everything you need to know about Fastscraping
+        </motion.h2>
 
         {/* Card-like container */}
         <motion.div
@@ -46,7 +47,7 @@ export function AccordionDemo() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-10 rounded-2xl border border-gray-200 bg-white/70 backdrop-blur shadow-sm"
+          className="mt-10 rounded-2xl border border-gray-100 bg-white/70 backdrop-blur shadow-sm"
         >
           <Accordion
             type="single"
@@ -126,6 +127,30 @@ export function AccordionDemo() {
                     Fastscraping, which you can find below in the footer, yet
                     we&apos;re confident we&apos;re the most functional tool for
                     individual developers, small companies and enterprises.
+                  </p>
+                </AccordionContent>
+              </motion.div>
+            </AccordionItem>
+
+            {/* Item 4 */}
+            <AccordionItem
+              value="item-4"
+              className="group px-4 md:px-6 transition data-[state=open]:bg-white hover:bg-gray-50"
+            >
+              <motion.div variants={item}>
+                <AccordionTrigger className="text-left py-5 hover:no-underline">
+                  <span className="font-medium text-neutral-800">
+                    How Do You Handle Issues Like Blocking and CAPTCHAs?
+                  </span>
+                </AccordionTrigger>
+                <div className="h-0.5 w-16 rounded-full bg-gradient-to-r from-blue-400 to-red-500 opacity-0 group-data-[state=open]:opacity-100 transition ml-1 md:ml-0" />
+                <AccordionContent className="flex flex-col gap-4 pb-6 pt-2 text-balance text-neutral-700">
+                  <p>
+                    Fastscraping uses advanced scraping technology to overcome
+                    challenges such as IP blocking, CAPTCHAs, and rate limits.
+                    We deploy tools like rotating proxies, residential IPs,
+                    headless browsers, and CAPTCHA-solving mechanisms to ensure
+                    uninterrupted data collection.
                   </p>
                 </AccordionContent>
               </motion.div>

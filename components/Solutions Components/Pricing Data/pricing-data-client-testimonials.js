@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
   CarouselApi,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -71,10 +72,12 @@ export default function ClientTestimonials() {
                         </p>
                       </div>
                       <div className="flex flex-col sm:flex-row items-center gap-4">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-14 h-14 rounded-full object-cover border"
+                          width={56}
+                          height={56}
+                          className="rounded-full object-cover border"
                         />
                         <div>
                           <p className="font-semibold text-gray-800">
@@ -84,10 +87,13 @@ export default function ClientTestimonials() {
                             {testimonial.title}
                           </p>
                         </div>
-                        <img
+                        <Image
                           src={testimonial.companyLogo}
                           alt="Client logo"
-                          className="h-8 ml-auto"
+                          width={0}
+                          height={32}
+                          className="h-8 ml-auto w-auto"
+                          unoptimized
                         />
                       </div>
                     </CardContent>

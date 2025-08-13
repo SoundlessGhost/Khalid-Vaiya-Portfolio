@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import {
@@ -38,11 +37,14 @@ export default function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen px-48 flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden
+                 flex items-center justify-center
+                 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 2xl:px-48
+                 py-16 sm:py-20 md:py-24"
     >
       {/* Animated Background */}
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{ y: ySpring, opacity, scale }}
       >
         {/* Grid Pattern */}
@@ -50,69 +52,55 @@ export default function HeroSection() {
 
         {/* Gradient Orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
+          animate={{ scale: [1.2, 1, 1.2], rotate: [360, 180, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         />
       </motion.div>
 
-      {/* Floating Icons */}
-      {floatingIcons.map((item, index) => (
-        <motion.div
-          key={index}
-          className="absolute text-emerald-400/20"
-          style={{
-            left: `calc(50% + ${item.x}px)`,
-            top: `calc(50% + ${item.y}px)`,
-          }}
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 360],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 8 + index * 2,
-            repeat: Infinity,
-            delay: item.delay,
-            ease: "easeInOut",
-          }}
-        >
-          <item.icon className="w-12 h-12" />
-        </motion.div>
-      ))}
+      {/* Floating Icons (hidden on small to avoid overlap) */}
+      <div className="hidden md:block">
+        {floatingIcons.map((item, index) => (
+          <motion.div
+            key={index}
+            className="absolute text-emerald-400/20"
+            style={{
+              left: `calc(50% + ${item.x}px)`,
+              top: `calc(50% + ${item.y}px)`,
+            }}
+            animate={{ y: [0, -20, 0], rotate: [0, 360], scale: [1, 1.1, 1] }}
+            transition={{
+              duration: 8 + index * 2,
+              repeat: Infinity,
+              delay: item.delay,
+              ease: "easeInOut",
+            }}
+          >
+            <item.icon className="w-10 h-10 lg:w-12 lg:h-12" />
+          </motion.div>
+        ))}
+      </div>
 
-      <div className="container mx-auto -mt-14 relative z-10">
-        <div>
+      <div className="container mx-auto relative z-10 -mt-4 sm:-mt-8 md:-mt-12 lg:-mt-14">
+        <div className="mx-auto max-w-3xl lg:max-w-6xl">
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="text-white leading-tight font-bold"
+            className="text-white leading-tight font-bold text-center lg:text-left"
           >
-            <span className="block text-5xl md:text-6xl">
+            <span className="block text-4xl sm:text-5xl md:text-6xl">
               Your Own Web Scraping
             </span>
-            <span className="block text-5xl md:text-6xl">Team on Demand</span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl">
+              Team on Demand
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -120,7 +108,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-6 text-gray-300 text-base md:text-lg space-y-1.5"
+            className="mt-6 text-gray-300 text-sm sm:text-base md:text-lg space-y-1.5 max-w-xl md:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
           >
             <p>
               We deliver structured data at large scale - no Cloudflare, no
@@ -131,36 +119,42 @@ export default function HeroSection() {
               handle everything.
             </p>
           </motion.div>
-          <div className="flex items-center mt-8">
-            <div className="flex items-center mr-6">
-              <div className="flex justify-center  mr-3">
+
+          {/* Feature bullets (wrap on small screens) */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mt-8 justify-center lg:justify-start">
+            <div className="flex items-center">
+              <div className="flex justify-center mr-3">
                 <ShieldOff className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
               </div>
-              <div className="text-gray-400 font-medium text-sm">
-                Bypass Cloudflare <br /> & Captchas
+              <div className="text-gray-400 font-medium text-xs sm:text-sm">
+                Bypass Cloudflare <br className="hidden sm:block" /> & Captchas
               </div>
             </div>
 
-            <div className="flex items-center  mr-6">
+            <div className="flex items-center">
               <div className="flex justify-center mr-3">
                 <Database className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
               </div>
-              <div className="text-gray-400 font-medium text-sm">
-                Large-Scale On <br /> Demand Scraping
+              <div className="text-gray-400 font-medium text-xs sm:text-sm">
+                Large-Scale On <br className="hidden sm:block" /> Demand
+                Scraping
               </div>
             </div>
-            <div className="flex items-center  mr-6">
+
+            <div className="flex items-center">
               <div className="flex justify-center mr-3">
                 <ShieldCheck className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
               </div>
-              <div className="text-gray-400 font-medium text-sm">
-                No Proxy or <br /> Maintenance Hassle
+              <div className="text-gray-400 font-medium text-xs sm:text-sm">
+                No Proxy or <br className="hidden sm:block" /> Maintenance
+                Hassle
               </div>
             </div>
           </div>
 
+          {/* (kept the empty stats map exactly as-is to avoid logic changes) */}
           <motion.div
-            className="mt-4 flex mx-3"
+            className="mt-4 flex mx-0 sm:mx-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -186,25 +180,23 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.75 }}
-            className="mt-8"
+            className="mt-8 text-center lg:text-left"
           >
             <a
               href="#get-started"
               className="inline-flex items-center text-white text-base md:text-lg font-medium group"
             >
               Get Started
-              <span className="ml-3 h-[1px] w-16 bg-white/60 group-hover:w-24 transition-all" />
+              <span className="ml-3 h-[1px] w-12 sm:w-16 bg-white/60 group-hover:w-24 transition-all" />
               <ArrowRight className="w-5 h-5 ml-3 opacity-80 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
-
-          {/* Stats */}
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator (hide on very small) */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
@@ -216,13 +208,16 @@ export default function HeroSection() {
           />
         </div>
       </motion.div>
-      <div className="flex justify-center">
+
+      {/* Illustration (scales down on mobile) */}
+      <div className="mt-10 md:mt-0 justify-center hidden lg:flex">
         <Image
           src="/images/Customized Data/Advanced customization-amico.png"
           alt="Web scraping illustration"
           width={500}
           height={500}
-          className="w-full max-w-md"
+          className="w-56 sm:w-72 md:w-96 lg:w-[28rem] h-auto"
+          priority
         />
       </div>
     </section>
