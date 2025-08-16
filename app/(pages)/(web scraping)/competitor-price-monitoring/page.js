@@ -5,9 +5,9 @@ import CompetitorPricingSection from "@/components/Web Scraping Components/Compe
 import ProfessionalSolutions from "@/components/Web Scraping Components/Competitor Price Data/competitor-professional-solutions";
 import React from "react";
 
-const CompetitorPriceData = () => {
+const CompetitorPriceMonitoringPage = () => {
   return (
-    <div className="pt-28">
+    <div>
       <CompetitorPriceDataHeroSection />
       <CompetitorPricingSection />
       <ProfessionalSolutions />
@@ -17,4 +17,4 @@ const CompetitorPriceData = () => {
   );
 };
 
-export default CompetitorPriceData;
+export default CompetitorPriceMonitoringPage;

@@ -16,6 +16,9 @@ import {
   Building2,
   Briefcase,
   BadgeDollarSign,
+  Smartphone,
+  Code2,
+  Server,
 } from "lucide-react";
 import TermsGatedForm from "./TermsGatedForm";
 
@@ -57,28 +60,28 @@ const webScraping = [
     href: "/web-scraping-service",
   },
   {
-    title: "Competitor Price Data",
+    title: "Competitor Price Monitoring",
     icon: <Scale className="h-4 w-4" />,
     desc: "Live pricing feeds to outpace the market.",
-    href: "/competitor-price-data",
+    href: "/competitor-price-monitoring",
   },
   {
-    title: "Expertise",
-    icon: <Workflow className="h-4 w-4" />,
+    title: "Mobile App Scraping",
+    icon: <Smartphone className="h-4 w-4" />,
     desc: "Battle-tested playbooks trusted by brands.",
-    href: "/expertise",
+    href: "/mobile-app-scraping",
   },
   {
-    title: "Web Data Extraction",
-    icon: <CircleOff className="h-4 w-4" />,
+    title: "Web Scraping API",
+    icon: <Code2 className="h-4 w-4" />,
     desc: "Customized pipelines, zero clutter.",
-    href: "/web-data-extraction",
+    href: "/web-scraping-api",
   },
   {
-    title: "How it works",
-    icon: <Rss className="h-4 w-4" />,
+    title: "Enterprise Web Crawling",
+    icon: <Server className="h-4 w-4" />,
     desc: "A transparent process from crawl to CSV.",
-    href: "/how-it-work",
+    href: "/enterprise-web-crawling",
   },
 ];
 
@@ -154,7 +157,7 @@ function Flyout({ label, items }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="group px-3 py-2 text-sm text-slate-200/90 hover:text-white transition">
+      <button className="group px-3 py-2 text-[18px] text-slate-200/90 hover:text-white transition">
         {label}
         <span className="block h-px scale-x-0 bg-emerald-400 transition-all duration-300 group-hover:scale-x-100" />
       </button>
@@ -226,51 +229,53 @@ export default function NavbarAnimated() {
               <span className="text-emerald-400">Fast</span>scraping
             </Link>
 
-            {/* desktop nav */}
-            <nav className="hidden md:flex items-center gap-1">
-              <Flyout label="Web Scraping" items={webScraping} />
-              <Flyout label="Solutions" items={solutions} />
-              <Flyout label="Resources" items={resources} />
-              <Link
-                href="/about"
-                className="group relative px-3 text-sm text-slate-200/90 hover:text-white transition"
-              >
-                About
-                <span
-                  className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
+            <div className="flex h-16 items-center justify-between">
+              {/* desktop nav */}
+              <nav className="hidden md:flex items-center gap-1">
+                <Flyout label="Web Scraping" items={webScraping} />
+                <Flyout label="Solutions" items={solutions} />
+                <Flyout label="Resources" items={resources} />
+                <Link
+                  href="/about"
+                  className="group relative px-3 text-[18px] text-slate-200/90 hover:text-white transition"
+                >
+                  About
+                  <span
+                    className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
                origin-left scale-x-0 bg-emerald-400 transition-transform duration-300
                group-hover:scale-x-100"
-                />
-              </Link>
-            </nav>
+                  />
+                </Link>
+              </nav>
 
-            {/* CTA + mobile */}
-            <div className="flex items-center gap-3">
-              <TermsGatedForm />
-              <button
-                className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/5 text-white ring-1 ring-white/10"
-                onClick={() => setMobile((s) => !s)}
-                aria-label="Toggle menu"
-              >
-                {/* hamburger / close */}
-                <div className="relative h-3.5 w-4">
-                  <span
-                    className={`absolute left-0 top-0 h-0.5 w-4 bg-white transition ${
-                      mobile ? "translate-y-1.5 rotate-45" : ""
-                    }`}
-                  />
-                  <span
-                    className={`absolute left-0 top-1.5 h-0.5 w-4 bg-white transition ${
-                      mobile ? "opacity-0" : ""
-                    }`}
-                  />
-                  <span
-                    className={`absolute left-0 top-3 h-0.5 w-4 bg-white transition ${
-                      mobile ? "-translate-y-1.5 -rotate-45" : ""
-                    }`}
-                  />
-                </div>
-              </button>
+              {/* CTA + mobile */}
+              <div className="flex items-center gap-3">
+                <TermsGatedForm />
+                <button
+                  className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/5 text-white ring-1 ring-white/10"
+                  onClick={() => setMobile((s) => !s)}
+                  aria-label="Toggle menu"
+                >
+                  {/* hamburger / close */}
+                  <div className="relative h-3.5 w-4">
+                    <span
+                      className={`absolute left-0 top-0 h-0.5 w-4 bg-white transition ${
+                        mobile ? "translate-y-1.5 rotate-45" : ""
+                      }`}
+                    />
+                    <span
+                      className={`absolute left-0 top-1.5 h-0.5 w-4 bg-white transition ${
+                        mobile ? "opacity-0" : ""
+                      }`}
+                    />
+                    <span
+                      className={`absolute left-0 top-3 h-0.5 w-4 bg-white transition ${
+                        mobile ? "-translate-y-1.5 -rotate-45" : ""
+                      }`}
+                    />
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>

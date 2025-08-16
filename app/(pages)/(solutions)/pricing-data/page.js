@@ -11,7 +11,7 @@ const PricingDataPage = () => {
     <div>
       <PricingDataHeroSection />
       <PricingDataSection />
-      <PricingHighlights />
+      {/* <PricingHighlights /> */}
       <PartnerExperience />
       <CaseStudySection />
       <ClientTestimonials />

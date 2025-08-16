@@ -29,18 +29,15 @@ const PopularScrapersCarousel = () => {
         opts={{ align: "start", loop: true }}
         plugins={[plugin.current]}
       >
-        <CarouselContent className="-ml-1">
-          <CarouselItem className="pl-1">
+        <CarouselContent>
+          <CarouselItem>
             <Amazon />
           </CarouselItem>
 
-          <CarouselItem className="pl-1">
+          <CarouselItem>
             <Linkdin />
           </CarouselItem>
         </CarouselContent>
-
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </div>
   );

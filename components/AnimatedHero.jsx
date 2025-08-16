@@ -1,6 +1,6 @@
 export default function AnimatedHero({ title, subtitle }) {
   return (
-    <div className="">
+    <div>
       <section className="relative isolate overflow-hidden pt-10">
         {/* base bg */}
         <div className="absolute inset-0 -z-20 bg-[#08111a]" />
@@ -38,17 +38,6 @@ export default function AnimatedHero({ title, subtitle }) {
           </p>
 
           {/* small animated badges (optional) */}
-          <div className="mt-10 flex items-center justify-center gap-3 text-xs text-emerald-300/80">
-            <span className="rounded-full border border-emerald-300/20 bg-emerald-400/5 px-3 py-1 backdrop-blur-sm animate-bob">
-              Invisible to detection
-            </span>
-            <span className="rounded-full border border-emerald-300/20 bg-emerald-400/5 px-3 py-1 backdrop-blur-sm animate-bob [animation-delay:.25s]">
-              50M+ pages/day
-            </span>
-            <span className="rounded-full border border-emerald-300/20 bg-emerald-400/5 px-3 py-1 backdrop-blur-sm animate-bob [animation-delay:.5s]">
-              Enterprise-grade
-            </span>
-          </div>
         </div>
       </section>
     </div>

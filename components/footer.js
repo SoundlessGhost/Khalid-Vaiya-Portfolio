@@ -5,11 +5,14 @@ export default function Footer() {
     {
       title: "Web Scraping",
       links: [
-        { href: "/expertise", label: "Expertise" },
-        { href: "/how-it-works", label: "How It Works" },
-        { href: "/web-data-extraction", label: "Web Data Extraction" },
         { href: "/web-scraping-service", label: "Web Scraping Service" },
-        { href: "/competitor-price-data", label: "Competitor Price Data" },
+        {
+          href: "/competitor-price-monitoring",
+          label: "Competitor Price Monitoring",
+        },
+        { href: "/mobile-app-scraping", label: "Mobile App Scraping" },
+        { href: "/web-scraping-api", label: "Web Scraping Api" },
+        { href: "/enterprise-web-crawling", label: "Enterprise Web Crawling" },
       ],
     },
     {
