@@ -1,16 +1,18 @@
-import AboutUsSection from "@/components/Web Scraping Components/Mobile App Scraping/expertise-about-us-section";
-import CaseStudySection from "@/components/Web Scraping Components/Mobile App Scraping/expertise-case-study-section";
-import ExpertiseHeroSection from "@/components/Web Scraping Components/Mobile App Scraping/mobile-app-scraping-hero-section";
-import WhyChooseUs from "@/components/Web Scraping Components/Mobile App Scraping/expertise-why-choose-us";
+import BenefitsMobileAppScraping from "@/components/Web Scraping Components/Mobile App Scraping/mobile-app-benefits-scraping";
+import CustomMobileAppScraping from "@/components/Web Scraping Components/Mobile App Scraping/mobile-app-custom-scraping";
+import HeroReliableMobileScraping from "@/components/Web Scraping Components/Mobile App Scraping/mobile-app-reliable-scraping";
+import MobileAppScrapingHeroSection from "@/components/Web Scraping Components/Mobile App Scraping/mobile-app-scraping-hero-section";
+import MobileAppScrapingSection from "@/components/Web Scraping Components/Mobile App Scraping/mobile-app-scraping-section";
 import React from "react";
 
 const MobileAppScrapingPage = () => {
   return (
     <div>
-      <ExpertiseHeroSection />
-      <WhyChooseUs />
-      <CaseStudySection />
-      <AboutUsSection />
+      <MobileAppScrapingHeroSection />
+      <MobileAppScrapingSection />
+      <CustomMobileAppScraping />
+      <BenefitsMobileAppScraping />
+      <HeroReliableMobileScraping />
     </div>
   );
 };

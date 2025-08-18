@@ -1,18 +1,16 @@
 import React from "react";
-import StepTwo from "@/components/Web Scraping Components/Web Scraping Api/how-it-work-step-two-demo";
-import StepThree from "@/components/Web Scraping Components/Web Scraping Api/how-it-work-step-three-demo";
-import StepOneDemo from "@/components/Web Scraping Components/Web Scraping Api/how-it-work-step-one-demo";
 import HowItWorkHeroSection from "@/components/Web Scraping Components/Web Scraping Api/web-scraping-api-hero-section";
-import CustomDataDelivery from "@/components/Web Scraping Components/Web Scraping Api/how-it-work-custom-data-delivery";
+import RealTimeScrapingSection from "@/components/Web Scraping Components/Web Scraping Api/web-scraping-api-real-time-section";
+import ScrapingHero from "@/components/Web Scraping Components/Web Scraping Api/web-scraping-hero";
+import BenefitsCustomizedSection from "@/components/Web Scraping Components/Web Scraping Api/web-scraping-api-benefits-scraping";
 
 const WebScrapingApiPage = () => {
   return (
     <div>
       <HowItWorkHeroSection />
-      <CustomDataDelivery />
-      <StepOneDemo />
-      <StepTwo />
-      <StepThree />
+      <RealTimeScrapingSection />
+      <BenefitsCustomizedSection />
+      <ScrapingHero />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import TermsThenFormInDialog from "../TermsGatedForm";
 
 export default function StartYourDataPipeline() {
   const steps = [
@@ -40,7 +41,6 @@ export default function StartYourDataPipeline() {
             results without delay.
           </p>
         </div>
-
         {/* stepper (no cards) */}
         <div className="mt-16">
           {/* rail */}
@@ -74,12 +74,9 @@ export default function StartYourDataPipeline() {
             </div>
           </div>
         </div>
-
         {/* CTA */}
         <div className="mt-12 flex justify-center">
-          <button className="cursor-pointer sm:inline-flex items-center rounded-full bg-emerald-500/90 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-500">
-            Book a Demo - Get a Free Sample
-          </button>
+          <TermsThenFormInDialog btn_name={"Book a Demo - Get a Free Sample"} />
         </div>
       </div>
     </section>

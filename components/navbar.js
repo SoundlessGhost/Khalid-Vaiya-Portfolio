@@ -20,7 +20,7 @@ import {
   Code2,
   Server,
 } from "lucide-react";
-import TermsGatedForm from "./TermsGatedForm";
+import TermsThenFormInDialog from "./TermsGatedForm";
 
 function useScrollNav() {
   const [hidden, setHidden] = useState(false);
@@ -250,7 +250,7 @@ export default function NavbarAnimated() {
 
               {/* CTA + mobile */}
               <div className="flex items-center gap-3">
-                <TermsGatedForm />
+                <TermsThenFormInDialog btn_name="Book a Demo" />
                 <button
                   className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/5 text-white ring-1 ring-white/10"
                   onClick={() => setMobile((s) => !s)}
@@ -313,10 +313,10 @@ export default function NavbarAnimated() {
             About
           </Link>
 
-          <TermsGatedForm
+          <TermsThenFormInDialog
             beforeOpen={() => setMobile(false)}
             buttonClassName="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white"
-            label="Book a Demo"
+            btn_name="Book a Demo"
           />
         </div>
       </div>

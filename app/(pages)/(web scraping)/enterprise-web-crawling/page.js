@@ -1,16 +1,16 @@
-import DataCollectionCTA from "@/components/Web Scraping Components/Enterprise Web Crawling/web-extraction-data-collection-cta";
-import GrowthPartner from "@/components/Web Scraping Components/Enterprise Web Crawling/web-extraction-growth-partner";
-import WebExtractionHeroSection from "@/components/Web Scraping Components/Enterprise Web Crawling/enterprise-web-crawling-hero-section";
-import WebExtraction from "@/components/Web Scraping Components/Enterprise Web Crawling/web-extraction-intro";
 import React from "react";
+import EnterpriseCrawlingHero from "@/components/Web Scraping Components/Enterprise Web Crawling/enterprise-web-crawling-sub-hero";
+import EnterpriseCrawlingSection from "@/components/Web Scraping Components/Enterprise Web Crawling/enterprise-web-crawling-section";
+import EnterpriseBenefitsSection from "@/components/Web Scraping Components/Enterprise Web Crawling/enterprise-web-benefits-section";
+import WebExtractionHeroSection from "@/components/Web Scraping Components/Enterprise Web Crawling/enterprise-web-crawling-hero-section";
 
 const EnterpriseWebCrawlingPage = () => {
   return (
     <div>
       <WebExtractionHeroSection />
-      <WebExtraction />
-      <GrowthPartner />
-      <DataCollectionCTA />
+      <EnterpriseCrawlingSection />
+      <EnterpriseBenefitsSection />
+      <EnterpriseCrawlingHero />
     </div>
   );
 };

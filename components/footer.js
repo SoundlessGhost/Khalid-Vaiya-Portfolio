@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TermsThenFormInDialog from "./TermsGatedForm";
 
 export default function Footer() {
   const columns = [
@@ -84,14 +85,9 @@ export default function Footer() {
                 systems.
               </p>
             </div>
-            <Link
-              href="#"
-              className="inline-flex items-center gap-2 rounded-lg px-4 py-2
-                         bg-emerald-500/10 text-emerald-300 border border-emerald-400/30
-                         hover:bg-emerald-500/20 hover:border-emerald-400/60 transition"
-            >
-              Book a Demo →
-            </Link>
+            <div>
+              <TermsThenFormInDialog btn_name={"Book a Demo"} />
+            </div>
           </div>
         </div>
 

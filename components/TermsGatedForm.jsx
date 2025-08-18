@@ -31,7 +31,11 @@ const FormSchema = z.object({
   workEmail: z.string().email("Please enter a valid work email."),
 });
 
-export default function TermsThenFormInDialog({ beforeOpen, buttonClassName }) {
+export default function TermsThenFormInDialog({
+  beforeOpen,
+  buttonClassName,
+  btn_name,
+}) {
   const [formOpen, setFormOpen] = React.useState(false);
   const [termsOpen, setTermsOpen] = React.useState(false);
 
@@ -101,7 +105,7 @@ export default function TermsThenFormInDialog({ beforeOpen, buttonClassName }) {
           setTermsOpen(true);
         }}
       >
-        Book a Demo
+        {btn_name}
       </button>
 
       {/* TERMS DIALOG */}
