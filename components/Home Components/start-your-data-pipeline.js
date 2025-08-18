@@ -1,79 +1,95 @@
+// app/components/StartPipeline.jsx
+// Optional: npm i lucide-react  (only for the arrow icon on the CTA)
+
 "use client";
-import React from "react";
+
+import { ArrowRight } from "lucide-react";
 import TermsThenFormInDialog from "../TermsGatedForm";
 
-export default function StartYourDataPipeline() {
+export default function StartPipeline() {
   const steps = [
     {
-      n: 1,
+      num: 1,
       title: "Define Your Data",
-      body: "Targets, fields & frequency (daily/weekly/monthly/one-time).",
+      desc: "Targets, fields & frequency (daily/weekly/monthly/one-time).",
     },
     {
-      n: 2,
+      num: 2,
       title: "We Set Up & Bypass",
-      body: "Stealth scrapers, proxy rotation, QA sample within 24–72h.",
+      desc: "Stealth scrapers, proxy rotation, QA sample within 24–72h.",
     },
     {
-      n: 3,
+      num: 3,
       title: "Get Data On-Demand",
-      body: "API/CSV/S3/Webhook—alerts & dashboard included.",
+      desc: "API/CSV/S3/Webhook—alerts & dashboard included.",
     },
   ];
 
   return (
-    <section className="relative overflow-hidden mt-20">
-      {/* bg */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-50 via-rose-50 to-white" />
-      {/* soft blobs */}
-      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl animate-float" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-rose-200/40 blur-3xl animate-float-delayed" />
+    <section className="relative overflow-hidden">
+      {/* Subtle grid for depth */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,transparent_0,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:28px_28px]"
+      />
 
-      <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
-        {/* heading */}
+      <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
+        {/* Heading */}
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-5xl animate-reveal">
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-5xl dark:text-white">
             Start Your Data Pipeline
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-gray-600 md:text-lg animate-reveal [animation-delay:120ms]">
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-gray-600 md:text-base dark:text-gray-300">
             Experience how Fastscraping data collection solutions drive results.
             Start your free trial or book a call today—maximize efficiency and
             results without delay.
           </p>
         </div>
-        {/* stepper (no cards) */}
-        <div className="mt-16">
-          {/* rail */}
-          <div className="relative mx-auto max-w-4xl">
-            {/* steps */}
-            <div className="grid grid-cols-1 gap-12 sm:grid-cols-3">
-              {steps.map((s, i) => (
-                <div
-                  key={i}
-                  className="text-center animate-reveal"
-                  style={{ animationDelay: `${i * 120}ms` }}
-                >
-                  {/* number circle */}
-                  <div
-                    className="mx-auto flex h-16 w-16 items-center justify-center rounded-full
-                                  bg-gradient-to-br from-emerald-500 to-emerald-700 text-white
-                                  ring-4 ring-emerald-100 shadow-lg transition
-                                  hover:scale-110 hover:rotate-3"
-                  >
-                    <span className="text-2xl font-extrabold">{s.n}</span>
-                  </div>
-                  {/* title + copy */}
-                  <h3 className="mt-4 text-lg font-semibold text-gray-900">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-gray-600">
-                    {s.body}
-                  </p>
+
+        {/* Steps */}
+        <div className="relative mt-14">
+          {/* connector line (desktop) */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-10 hidden h-0.5 bg-gradient-to-r from-emerald-400 via-emerald-500/60 to-emerald-400 md:block"
+          />
+
+          <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-3">
+            {steps.map((s, i) => (
+              <article
+                key={i}
+                className="group relative rounded-2xl border border-black/5 bg-white/70 p-7 text-center shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] dark:border-white/10 dark:bg-gray-900/60"
+              >
+                {/* Number badge */}
+                <div className="mx-auto -mt-10 mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_12px_30px_-10px_rgba(16,185,129,0.9)] ring-4 ring-white/80 dark:ring-gray-900">
+                  <span className="text-xl font-extrabold">{s.num}</span>
                 </div>
-              ))}
-            </div>
+
+                <h3 className="text-base font-semibold text-gray-900 md:text-lg dark:text-white">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                  {s.desc}
+                </p>
+
+                {/* bottom divider + badges */}
+                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-gray-300/70 to-transparent dark:via-white/20" />
+                <div className="mt-3 flex justify-center gap-2 text-[10px] text-gray-500 dark:text-gray-400">
+                  <span className="rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
+                    Fast
+                  </span>
+                  <span className="rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
+                    Reliable
+                  </span>
+                  <span className="rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
+                    Scalable
+                  </span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
+
         {/* CTA */}
         <div className="mt-12 flex justify-center">
           <TermsThenFormInDialog btn_name={"Book a Demo - Get a Free Sample"} />

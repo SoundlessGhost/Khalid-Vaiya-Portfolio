@@ -5,20 +5,18 @@ import { useEffect, useRef, useState } from "react";
 import {
   Scale,
   BriefcaseBusiness,
-  Workflow,
-  CircleOff,
-  Rss,
-  Package,
   FileText,
   BookOpen,
   LifeBuoy,
-  SlidersHorizontal,
-  Building2,
   Briefcase,
-  BadgeDollarSign,
   Smartphone,
   Code2,
   Server,
+  Utensils,
+  ShoppingCart,
+  Home,
+  Settings,
+  Ticket,
 } from "lucide-react";
 import TermsThenFormInDialog from "./TermsGatedForm";
 
@@ -87,33 +85,39 @@ const webScraping = [
 
 const solutions = [
   {
-    title: "Pricing Data",
-    icon: <BadgeDollarSign className="h-4 w-4" />,
-    desc: "Real-time competitor prices to guide dynamic decisions.",
-    href: "/pricing-data",
+    title: "Ticketing Website Pricing",
+    icon: <Ticket className="h-4 w-4" />,
+    desc: "Stay ahead with live ticket prices and competitor comparisons.",
+    href: "/ticketing-website-pricing",
   },
   {
-    title: "Job Listings Data",
+    title: "Restaurant & Food Pricing",
+    icon: <Utensils className="h-4 w-4" />,
+    desc: "Menus, dishes, and pricing organized into structured catalogs.",
+    href: "/restaurant-food-pricing",
+  },
+  {
+    title: "E-Commerce & Inventory Pricing",
+    icon: <ShoppingCart className="h-4 w-4" />,
+    desc: "Product listings, variants, and stock data—clean and reliable.",
+    href: "/e-commerce-inventory-pricing",
+  },
+  {
+    title: "Job Listing Data",
     icon: <Briefcase className="h-4 w-4" />,
-    desc: "Large-scale hiring signals across roles, skills and pay.",
+    desc: "Hiring insights with roles, skills, salaries, and demand trends.",
     href: "/job-listings-data",
   },
   {
-    title: "Product Data",
-    icon: <Package className="h-4 w-4" />,
-    desc: "Structured catalogs, specs and variants—clean and consistent.",
-    href: "/product-data-scraping",
-  },
-  {
-    title: "Real Estate Data",
-    icon: <Building2 className="h-4 w-4" />,
-    desc: "Property, pricing and market movement in one feed.",
+    title: "Real Estate Listing Data",
+    icon: <Home className="h-4 w-4" />,
+    desc: "Property details, pricing shifts, and market movement analysis.",
     href: "/real-estate-data",
   },
   {
-    title: "Customized Data",
-    icon: <SlidersHorizontal className="h-4 w-4" />,
-    desc: "Exactly the fields you need—on your schedule.",
+    title: "Customized Data Solution",
+    icon: <Settings className="h-4 w-4" />,
+    desc: "Tailored data feeds with the exact fields you need, on demand.",
     href: "/customized-data",
   },
 ];

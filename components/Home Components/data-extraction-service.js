@@ -1,152 +1,108 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import { ClipboardList, Rocket, BarChart3 } from "lucide-react";
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.08 } },
-};
-const item = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
-};
+export default function DataExtractionSection() {
+  const features = [
+    {
+      title: "Exceptional Quality You Can Count On",
+      desc: "With over 50 quality checks, we ensure you get accurate, reliable, and up-to-date data every single time.",
+      Icon: ClipboardList,
+      accent: "from-amber-300/50 to-orange-500/40",
+      color: "text-amber-500",
+    },
+    {
+      title: "Stay Ahead of Problems",
+      desc: "Our proactive approach tackles potential issues before they even happen, guaranteeing smooth, consistent results you can rely on.",
+      Icon: Rocket,
+      accent: "from-violet-300/50 to-indigo-500/40",
+      color: "text-indigo-500",
+    },
+    {
+      title: "Tailored to Fit Your Needs",
+      desc: "Our data extraction solution is fully customizable and grows with your business, providing the flexibility you need to succeed.",
+      Icon: BarChart3,
+      accent: "from-sky-300/50 to-cyan-500/40",
+      color: "text-cyan-500",
+    },
+  ];
 
-export default function DataExtractionService() {
   return (
     <section className="relative overflow-hidden">
-      {/* animated gradient blobs (background) */}
-      <motion.div
-        aria-hidden
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="pointer-events-none absolute inset-0"
-      >
-        <motion.div
-          initial={{ x: -120, y: -60, scale: 0.9 }}
-          animate={{ x: 0, y: 0, scale: 1 }}
-          transition={{ duration: 6, repeat: Infinity, repeatType: "mirror" }}
-          className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-emerald-200/50 blur-3xl"
-        />
-        <motion.div
-          initial={{ x: 80, y: 40, scale: 1 }}
-          animate={{ x: 0, y: 0, scale: 1.05 }}
-          transition={{ duration: 7, repeat: Infinity, repeatType: "mirror" }}
-          className="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-sky-200/50 blur-3xl"
-        />
-      </motion.div>
+      {/* background grid + blobs */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.12),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.12),transparent_60%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 [background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.6))] dark:[background:linear-gradient(180deg,rgba(17,24,39,0.6),rgba(17,24,39,0.7))]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,transparent_0,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:28px_28px]"
+      />
 
-      <div className="relative bg-gradient-to-b from-[#d9f1fb] to-[#e6f7ed] py-20 px-8 md:px-20">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className="max-w-6xl mx-auto text-center"
-        >
-          {/* heading */}
-          <motion.h2
-            variants={item}
-            className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight"
-          >
+      <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
+        {/* header */}
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 drop-shadow-sm md:text-4xl dark:text-white">
             The Most Reliable Data Extraction Services in the Market
-          </motion.h2>
+          </h2>
 
-          {/* animated underline */}
-          <motion.div
-            variants={item}
-            initial={{ scaleX: 0, opacity: 0.4 }}
-            whileInView={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto mb-6 h-1 w-32 origin-center rounded-full bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-500"
-          />
-
-          <motion.p
-            variants={item}
-            className="text-gray-700 text-lg md:text-xl mb-16 leading-relaxed"
-          >
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg dark:text-gray-300">
             Tired of wasting time on unreliable data? Our data extraction
             services are designed to give you accurate, double-verified results
             you can trust. With secure backups and thorough quality checks, we
             take care of the hard work so you can focus on making smarter
             decisions with confidence.
-          </motion.p>
+          </p>
+        </div>
 
-          {/* features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-            {/* card 1 */}
-            <motion.div
-              variants={item}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="group rounded-xl bg-white/80 p-6 shadow-sm hover:shadow-md border border-gray-200 transition"
+        {/* cards */}
+        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map(({ title, desc, Icon, accent, color }, i) => (
+            <article
+              key={i}
+              className="group relative rounded-2xl border border-black/5 bg-white/70 p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] dark:border-white/5 dark:bg-gray-900/60"
             >
-              <motion.div
-                whileHover={{ rotate: -6, scale: 1.08 }}
-                className="text-5xl mb-4 inline-flex"
-              >
-                📋
-              </motion.div>
-              <h3 className="font-bold text-xl mb-2">
-                Exceptional Quality You Can Count On
-              </h3>
-              <p className="text-gray-700">
-                With over 50 quality checks, we ensure you get accurate,
-                reliable, and up-to-date data every single time.
-              </p>
-              <span className="mt-4 block h-0.5 w-14 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-0 group-hover:opacity-100 transition" />
-            </motion.div>
+              {/* corner gradient ribbon */}
+              <div
+                className={`pointer-events-none absolute -right-10 -top-10 h-28 w-28 rotate-12 rounded-2xl bg-gradient-to-br ${accent} blur-2xl opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+                aria-hidden="true"
+              />
 
-            {/* card 2 */}
-            <motion.div
-              variants={item}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="group rounded-xl bg-white/80 p-6 shadow-sm hover:shadow-md border border-gray-200 transition"
-            >
-              <motion.div
-                whileHover={{ rotate: 6, scale: 1.08 }}
-                className="text-5xl mb-4 inline-flex"
-              >
-                🏃
-              </motion.div>
-              <h3 className="font-bold text-xl mb-2">Stay Ahead of Problems</h3>
-              <p className="text-gray-700">
-                Our proactive approach tackles potential issues before they even
-                happen, guaranteeing smooth, consistent results you can rely on.
-              </p>
-              <span className="mt-4 block h-0.5 w-14 rounded-full bg-gradient-to-r from-sky-400 to-indigo-600 opacity-0 group-hover:opacity-100 transition" />
-            </motion.div>
+              <div className="flex items-start gap-4">
+                <div className="rounded-xl border border-black/5 bg-white/70 p-3 shadow-sm dark:border-white/10 dark:bg-gray-800/60">
+                  <Icon className={`h-6 w-6 ${color}`} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    {desc}
+                  </p>
+                </div>
+              </div>
 
-            {/* card 3 */}
-            <motion.div
-              variants={item}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="group rounded-xl bg-white/80 p-6 shadow-sm hover:shadow-md border border-gray-200 transition"
-            >
-              <motion.div
-                whileHover={{ rotate: -4, scale: 1.08 }}
-                className="text-5xl mb-4 inline-flex"
-              >
-                📈
-              </motion.div>
-              <h3 className="font-bold text-xl mb-2">
-                Tailored to Fit Your Needs
-              </h3>
-              <p className="text-gray-700">
-                Our{" "}
-                <a
-                  className="text-blue-600 underline underline-offset-4"
-                  href="#"
-                >
-                  data extraction solution
-                </a>{" "}
-                is fully customizable and grows with your business, providing
-                the flexibility you need to succeed.
-              </p>
-              <span className="mt-4 block h-0.5 w-14 rounded-full bg-gradient-to-r from-pink-400 to-orange-500 opacity-0 group-hover:opacity-100 transition" />
-            </motion.div>
-          </div>
-        </motion.div>
+              {/* bottom accent line */}
+              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-gray-300/70 to-transparent dark:via-white/20" />
+              {/* micro detail */}
+              <div className="mt-3 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                <span className="inline-flex items-center rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
+                  Verified
+                </span>
+                <span className="inline-flex items-center rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
+                  Secure
+                </span>
+                <span className="inline-flex items-center rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
+                  Scalable
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

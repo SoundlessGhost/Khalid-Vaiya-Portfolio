@@ -19,11 +19,21 @@ export default function Footer() {
     {
       title: "Solutions",
       links: [
-        { href: "/pricing-data", label: "Pricing Data" },
-        { href: "/product-data", label: "Product Data" },
-        { href: "/customized-data", label: "Customized Data" },
-        { href: "/real-estate-data", label: "Real Estate Data" },
-        { href: "/job-listings-data", label: "Job Listings Data" },
+        {
+          href: "/ticketing-website-pricing",
+          label: "Ticketing Website Pricing",
+        },
+        {
+          href: "/restaurant-food-pricing",
+          label: "Restaurant & Food Pricing",
+        },
+        {
+          href: "/e-Commerce-inventory-pricing",
+          label: "E-Commerce & Pricing",
+        },
+        { href: "/customized-data", label: "Customized Data Solutions" },
+        { href: "/real-estate-data", label: "Real Estate Listing Data" },
+        { href: "/job-listings-data", label: "Job Listing Data" },
       ],
     },
     {

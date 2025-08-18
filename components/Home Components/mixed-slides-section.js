@@ -88,9 +88,6 @@ export default function GradientSlidesSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
     </section>

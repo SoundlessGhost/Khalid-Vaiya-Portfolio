@@ -8,6 +8,7 @@ import {
   HousePlus,
   Cog,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function MarketplaceGrid() {
   const items = [
@@ -17,6 +18,7 @@ export default function MarketplaceGrid() {
       description:
         "Access real-time event and ticketing insights from StubHub, SeatGeek, and Vivid Seats. Includes event details, live pricing updates, daily stock changes, and demand tracking for resellers and analysts.",
       icon: <Ticket className="h-6 w-6 text-emerald-600" />,
+      href: "/ticketing-website-pricing",
     },
     {
       id: "2",
@@ -24,6 +26,7 @@ export default function MarketplaceGrid() {
       description:
         "Track weekly menu and pricing changes from Starbucks, McDonald's, Subway, and Wendy's. Get product details, sub-menu structures, combo pricing, and historical price trends.",
       icon: <Hamburger className="h-6 w-6 text-emerald-600" />,
+      href: "/restaurant-food-pricing",
     },
     {
       id: "3",
@@ -31,6 +34,7 @@ export default function MarketplaceGrid() {
       description:
         "Extract product information, prices, discounts, reviews, and stock levels from top e-commerce platforms. Ideal for price monitoring, competitor tracking, and inventory optimization.",
       icon: <ShoppingCart className="h-6 w-6 text-emerald-600" />,
+      href: "/e-commerce-inventory-pricing",
     },
     {
       id: "4",
@@ -38,6 +42,7 @@ export default function MarketplaceGrid() {
       description:
         "Collect weekly job postings from LinkedIn, Indeed, and Glassdoor. Includes job title, location, salary range, required skills, posting dates, and employer details for recruitment intelligence.",
       icon: <BriefcaseBusiness className="h-6 w-6 text-emerald-600" />,
+      href: "/job-listings-data",
     },
     {
       id: "5",
@@ -45,6 +50,7 @@ export default function MarketplaceGrid() {
       description:
         "Monitor property listings, price changes, new listings, and agent contact details. Perfect for property investors, brokers, and real estate analytics.",
       icon: <HousePlus className="h-6 w-6 text-emerald-600" />,
+      href: "/real-estate-data",
     },
     {
       id: "6",
@@ -52,6 +58,7 @@ export default function MarketplaceGrid() {
       description:
         "Need something unique? We scrape any public website for price monitoring, inventory checks, and large-scale repetitive task automation. Fully managed and protected against all major anti-bot systems.",
       icon: <Cog className="h-6 w-6 text-emerald-600" />,
+      href: "/customized-data",
     },
   ];
 
@@ -76,7 +83,8 @@ export default function MarketplaceGrid() {
         {/* RESPONSIVE GRID */}
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
           {items.map((it) => (
-            <article
+            <Link
+              href={it.href}
               key={it.id}
               className="group cursor-pointer relative rounded-2xl border border-gray-200 bg-white/80 p-5 md:p-6 lg:p-7 shadow-sm backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-gray-300"
             >
@@ -94,7 +102,7 @@ export default function MarketplaceGrid() {
               <p className="mt-3 text-gray-600 text-sm md:text-base leading-relaxed line-clamp-3">
                 {it.description}
               </p>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
