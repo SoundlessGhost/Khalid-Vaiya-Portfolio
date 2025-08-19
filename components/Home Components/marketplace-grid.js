@@ -1,5 +1,8 @@
 "use client";
+
 import React from "react";
+import Link from "next/link";
+
 import {
   ShoppingCart,
   Ticket,
@@ -8,7 +11,6 @@ import {
   HousePlus,
   Cog,
 } from "lucide-react";
-import Link from "next/link";
 
 export default function MarketplaceGrid() {
   const items = [

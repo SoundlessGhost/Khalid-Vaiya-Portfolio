@@ -1,15 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 export default function GradientSlidesSection() {

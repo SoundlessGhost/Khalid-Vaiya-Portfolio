@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Database, Globe, Shield } from "lucide-react";
 

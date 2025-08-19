@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import TermsThenFormInDialog from "./TermsGatedForm";
+
 import { useEffect, useRef, useState } from "react";
 import {
   Scale,
@@ -18,8 +20,8 @@ import {
   Settings,
   Ticket,
 } from "lucide-react";
-import TermsThenFormInDialog from "./TermsGatedForm";
 
+// Scroll Navbar
 function useScrollNav() {
   const [hidden, setHidden] = useState(false);
   const [elevated, setElevated] = useState(false);
@@ -39,6 +41,7 @@ function useScrollNav() {
   return { hidden, elevated };
 }
 
+// Out side Close
 function useOutsideClose(ref, onClose) {
   useEffect(() => {
     const h = (e) => {
@@ -49,109 +52,10 @@ function useOutsideClose(ref, onClose) {
   }, [ref, onClose]);
 }
 
-/* ---------- menu data ---------- */
-const webScraping = [
-  {
-    title: "Web Scraping Service",
-    icon: <BriefcaseBusiness className="h-4 w-4" />,
-    desc: "Clean, reliable, automated extraction at scale.",
-    href: "/web-scraping-service",
-  },
-  {
-    title: "Competitor Price Monitoring",
-    icon: <Scale className="h-4 w-4" />,
-    desc: "Live pricing feeds to outpace the market.",
-    href: "/competitor-price-monitoring",
-  },
-  {
-    title: "Mobile App Scraping",
-    icon: <Smartphone className="h-4 w-4" />,
-    desc: "Battle-tested playbooks trusted by brands.",
-    href: "/mobile-app-scraping",
-  },
-  {
-    title: "Web Scraping API",
-    icon: <Code2 className="h-4 w-4" />,
-    desc: "Customized pipelines, zero clutter.",
-    href: "/web-scraping-api",
-  },
-  {
-    title: "Enterprise Web Crawling",
-    icon: <Server className="h-4 w-4" />,
-    desc: "A transparent process from crawl to CSV.",
-    href: "/enterprise-web-crawling",
-  },
-];
-
-const solutions = [
-  {
-    title: "Ticketing Website Pricing",
-    icon: <Ticket className="h-4 w-4" />,
-    desc: "Stay ahead with live ticket prices and competitor comparisons.",
-    href: "/ticketing-website-pricing",
-  },
-  {
-    title: "Restaurant & Food Pricing",
-    icon: <Utensils className="h-4 w-4" />,
-    desc: "Menus, dishes, and pricing organized into structured catalogs.",
-    href: "/restaurant-food-pricing",
-  },
-  {
-    title: "E-Commerce & Inventory Pricing",
-    icon: <ShoppingCart className="h-4 w-4" />,
-    desc: "Product listings, variants, and stock data—clean and reliable.",
-    href: "/e-commerce-inventory-pricing",
-  },
-  {
-    title: "Job Listing Data",
-    icon: <Briefcase className="h-4 w-4" />,
-    desc: "Hiring insights with roles, skills, salaries, and demand trends.",
-    href: "/job-listings-data",
-  },
-  {
-    title: "Real Estate Listing Data",
-    icon: <Home className="h-4 w-4" />,
-    desc: "Property details, pricing shifts, and market movement analysis.",
-    href: "/real-estate-data",
-  },
-  {
-    title: "Customized Data Solution",
-    icon: <Settings className="h-4 w-4" />,
-    desc: "Tailored data feeds with the exact fields you need, on demand.",
-    href: "/customized-data",
-  },
-];
-
-const resources = [
-  {
-    title: "Case Studies",
-    icon: <BriefcaseBusiness className="h-4 w-4" />,
-    desc: "Outcomes and wins we delivered for clients.",
-    href: "/case-study",
-  },
-  {
-    title: "Supports",
-    icon: <LifeBuoy className="h-4 w-4" />,
-    desc: "Help center, FAQs and hands-on assistance.",
-    href: "/supports",
-  },
-  {
-    title: "Ebooks",
-    icon: <BookOpen className="h-4 w-4" />,
-    desc: "Deep dives and frameworks for data teams.",
-    href: "/e-book",
-  },
-  {
-    title: "Articles",
-    icon: <FileText className="h-4 w-4" />,
-    desc: "Short, practical reads across industries.",
-    href: "/articles",
-  },
-];
-
-/* ---------- components ---------- */
+// Flyout Components
 function Flyout({ label, items }) {
   const [open, setOpen] = useState(false);
+
   const boxRef = useRef(null);
   useOutsideClose(boxRef, () => setOpen(false));
 
@@ -161,7 +65,7 @@ function Flyout({ label, items }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="group px-3 py-2 text-[18px] text-slate-200/90 hover:text-white transition">
+      <button className="group py-2 font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition">
         {label}
         <span className="block h-px scale-x-0 bg-emerald-400 transition-all duration-300 group-hover:scale-x-100" />
       </button>
@@ -205,13 +109,116 @@ function Flyout({ label, items }) {
   );
 }
 
+// Web Scraping Menu Data
+const webScraping = [
+  {
+    title: "Web Scraping Service",
+    icon: <BriefcaseBusiness className="h-4 w-4" />,
+    desc: "Clean, reliable, automated extraction at scale.",
+    href: "/web-scraping-service",
+  },
+  {
+    title: "Competitor Price Monitoring",
+    icon: <Scale className="h-4 w-4" />,
+    desc: "Live pricing feeds to outpace the market.",
+    href: "/competitor-price-monitoring",
+  },
+  {
+    title: "Mobile App Scraping",
+    icon: <Smartphone className="h-4 w-4" />,
+    desc: "Battle-tested playbooks trusted by brands.",
+    href: "/mobile-app-scraping",
+  },
+  {
+    title: "Web Scraping API",
+    icon: <Code2 className="h-4 w-4" />,
+    desc: "Customized pipelines, zero clutter.",
+    href: "/web-scraping-api",
+  },
+  {
+    title: "Enterprise Web Crawling",
+    icon: <Server className="h-4 w-4" />,
+    desc: "A transparent process from crawl to CSV.",
+    href: "/enterprise-web-crawling",
+  },
+];
+
+// Solutions Menu Data
+const solutions = [
+  {
+    title: "Ticketing Website Pricing",
+    icon: <Ticket className="h-4 w-4" />,
+    desc: "Stay ahead with live ticket prices and competitor comparisons.",
+    href: "/ticketing-website-pricing",
+  },
+  {
+    title: "Restaurant & Food Pricing",
+    icon: <Utensils className="h-4 w-4" />,
+    desc: "Menus, dishes, and pricing organized into structured catalogs.",
+    href: "/restaurant-food-pricing",
+  },
+  {
+    title: "E-Commerce & Inventory Pricing",
+    icon: <ShoppingCart className="h-4 w-4" />,
+    desc: "Product listings, variants, and stock data—clean and reliable.",
+    href: "/e-commerce-inventory-pricing",
+  },
+  {
+    title: "Job Listing Data",
+    icon: <Briefcase className="h-4 w-4" />,
+    desc: "Hiring insights with roles, skills, salaries, and demand trends.",
+    href: "/job-listings-data",
+  },
+  {
+    title: "Real Estate Listing Data",
+    icon: <Home className="h-4 w-4" />,
+    desc: "Property details, pricing shifts, and market movement analysis.",
+    href: "/real-estate-data",
+  },
+  {
+    title: "Customized Data Solution",
+    icon: <Settings className="h-4 w-4" />,
+    desc: "Tailored data feeds with the exact fields you need, on demand.",
+    href: "/customized-data",
+  },
+];
+
+// Resources Menu Data
+const resources = [
+  {
+    title: "Case Studies",
+    icon: <BriefcaseBusiness className="h-4 w-4" />,
+    desc: "Outcomes and wins we delivered for clients.",
+    href: "/case-study",
+  },
+  {
+    title: "Supports",
+    icon: <LifeBuoy className="h-4 w-4" />,
+    desc: "Help center, FAQs and hands-on assistance.",
+    href: "/supports",
+  },
+  {
+    title: "Ebooks",
+    icon: <BookOpen className="h-4 w-4" />,
+    desc: "Deep dives and frameworks for data teams.",
+    href: "/e-book",
+  },
+  {
+    title: "Articles",
+    icon: <FileText className="h-4 w-4" />,
+    desc: "Short, practical reads across industries.",
+    href: "/articles",
+  },
+];
+
+// Main Components
 export default function NavbarAnimated() {
   const { hidden, elevated } = useScrollNav();
   const [mobile, setMobile] = useState(false);
 
   return (
     <>
-      {/* top nav */}
+      {/* Top Navbar */}
       <div
         className={`fixed inset-x-0 top-0 z-50 transition-transform duration-300
         ${hidden ? "-translate-y-full" : "translate-y-0"}`}
@@ -225,7 +232,7 @@ export default function NavbarAnimated() {
           }`}
         >
           <div className="flex h-16 items-center justify-between">
-            {/* brand */}
+            {/* Brand */}
             <Link
               href="/"
               className="text-xl font-bold tracking-tight text-white"
@@ -234,14 +241,25 @@ export default function NavbarAnimated() {
             </Link>
 
             <div className="flex h-16 items-center justify-between">
-              {/* desktop nav */}
+              {/* Desktop Nav */}
               <nav className="hidden md:flex items-center gap-1">
-                <Flyout label="Web Scraping" items={webScraping} />
+                <Link
+                  href="/"
+                  className="group relative font-bold py-2 px-3 text-[16px] text-slate-200/90 hover:text-white transition"
+                >
+                  Home
+                  <span
+                    className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
+               origin-left scale-x-0 bg-emerald-400 transition-transform duration-300
+               group-hover:scale-x-100"
+                  />
+                </Link>
+                <Flyout label="Web scraping" items={webScraping} />
                 <Flyout label="Solutions" items={solutions} />
                 <Flyout label="Resources" items={resources} />
                 <Link
                   href="/about"
-                  className="group relative px-3 text-[18px] text-slate-200/90 hover:text-white transition"
+                  className="group relative font-bold py-2 px-3 text-[16px] text-slate-200/90 hover:text-white transition"
                 >
                   About
                   <span
@@ -252,7 +270,7 @@ export default function NavbarAnimated() {
                 </Link>
               </nav>
 
-              {/* CTA + mobile */}
+              {/* CTA  Mobile */}
               <div className="flex items-center gap-3">
                 <TermsThenFormInDialog btn_name="Book a Demo" />
                 <button
@@ -284,16 +302,23 @@ export default function NavbarAnimated() {
           </div>
         </div>
 
-        {/* subtle bottom separator glow to match hero */}
+        {/* Subtle bottom separator glow to match hero */}
         <div className="pointer-events-none h-px w-full bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
       </div>
 
-      {/* mobile drawer */}
+      {/* Mobile Drawer */}
       <div
         className={`fixed inset-x-0 top-16 z-40 origin-top bg-slate-950/90 backdrop-blur-xl transition-transform duration-300 md:hidden
         ${mobile ? "scale-y-100" : "scale-y-0"} border-t border-white/10`}
       >
         <div className="px-6 py-4">
+          <Link
+            href="/"
+            onClick={() => setMobile(false)}
+            className="flex items-center gap-2 rounded-md py-4 font-bold text-sm text-slate-300 border-b border-white/10"
+          >
+            Home
+          </Link>
           <MobileGroup
             label="Web Scraping"
             items={webScraping}
@@ -328,10 +353,10 @@ export default function NavbarAnimated() {
   );
 }
 
-// mobile function
-
+// Mobile Function
 function MobileGroup({ label, items, onClick }) {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="border-b border-white/10 py-3">
       <button

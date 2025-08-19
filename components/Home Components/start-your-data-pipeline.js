@@ -1,9 +1,5 @@
-// app/components/StartPipeline.jsx
-// Optional: npm i lucide-react  (only for the arrow icon on the CTA)
-
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import TermsThenFormInDialog from "../TermsGatedForm";
 
 export default function StartPipeline() {
