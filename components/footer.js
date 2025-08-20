@@ -36,25 +36,23 @@ export default function Footer() {
         { href: "/job-listings-data", label: "Job Listing Data" },
       ],
     },
-    {
-      title: "About",
-      links: [
-        { href: "/company", label: "Company" },
-        { href: "/customers", label: "Customers" },
-        { href: "/support", label: "Support" },
-        { href: "/contact", label: "Contact" },
-        { href: "/price", label: "Price" },
-      ],
-    },
+    // {
+    //   title: "About",
+    //   links: [
+    //     { href: "/company", label: "Company" },
+    //     { href: "/customers", label: "Customers" },
+    //     { href: "/support", label: "Support" },
+    //     { href: "/contact", label: "Contact" },
+    //     { href: "/price", label: "Price" },
+    //   ],
+    // },
     {
       title: "Resources",
       links: [
-        { href: "/e-book", label: "Ebooks" },
-        { href: "/articles", label: "Articles" },
-        { href: "/white-papers", label: "White Papers" },
+        { href: "/supports", label: "Supports" },
         { href: "/case-studies", label: "Case Studies" },
-        { href: "/privacy-policy", label: "Privacy Policy" },
-        { href: "/terms", label: "Terms & Conditions" },
+        { href: "/legal/privacy-policy", label: "Privacy Policy" },
+        { href: "/legal/privacy-policy", label: "Terms & Conditions" },
       ],
     },
     {
@@ -135,8 +133,8 @@ function FooterCol({ title, links }) {
         <span className="h-0.5 w-6 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400" />
       </h3>
       <ul className="space-y-2">
-        {links.map((link) => (
-          <FooterLink key={link.href} href={link.href}>
+        {links.map((link, i) => (
+          <FooterLink key={i} href={link.href}>
             {link.label}
           </FooterLink>
         ))}

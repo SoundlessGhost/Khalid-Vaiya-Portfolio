@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import PricingContactOnly from "@/components/PricingContactOnly";
 
 const PricingPage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <PricingContactOnly />
+    </div>
+  );
 };
 
 export default PricingPage;

@@ -81,31 +81,6 @@ export default function AboutUsStats() {
                 <Badge icon={Activity} text="Monitored 24/7" />
                 <Badge icon={Sparkles} text="50+ QA checks" />
               </div>
-
-              {/* CTA */}
-              <div className="mt-10">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-12px_rgba(16,185,129,0.9)] transition hover:scale-[1.02] hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300 dark:focus:ring-emerald-800"
-                >
-                  Talk to a Data Expert
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    className="opacity-90"
-                    fill="none"
-                  >
-                    <path
-                      d="M5 12h14m0 0-6-6m6 6-6 6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-              </div>
             </div>
           </div>
         </section>

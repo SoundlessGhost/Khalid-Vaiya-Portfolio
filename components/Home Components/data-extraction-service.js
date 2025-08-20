@@ -1,109 +1,125 @@
-"use client";
+// components/DataExtractionSimple.jsx
 
-import { ClipboardList, Rocket, BarChart3 } from "lucide-react";
-
-export default function DataExtractionSection() {
-  const features = [
-    {
-      title: "Exceptional Quality You Can Count On",
-      desc: "With over 50 quality checks, we ensure you get accurate, reliable, and up-to-date data every single time.",
-      Icon: ClipboardList,
-      accent: "from-amber-300/50 to-orange-500/40",
-      color: "text-amber-500",
-    },
-    {
-      title: "Stay Ahead of Problems",
-      desc: "Our proactive approach tackles potential issues before they even happen, guaranteeing smooth, consistent results you can rely on.",
-      Icon: Rocket,
-      accent: "from-violet-300/50 to-indigo-500/40",
-      color: "text-indigo-500",
-    },
-    {
-      title: "Tailored to Fit Your Needs",
-      desc: "Our data extraction solution is fully customizable and grows with your business, providing the flexibility you need to succeed.",
-      Icon: BarChart3,
-      accent: "from-sky-300/50 to-cyan-500/40",
-      color: "text-cyan-500",
-    },
-  ];
-
+export default function DataExtractionSimple() {
   return (
     <section className="relative overflow-hidden">
-      {/* background grid + blobs */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.12),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.12),transparent_60%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 [background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.6))] dark:[background:linear-gradient(180deg,rgba(17,24,39,0.6),rgba(17,24,39,0.7))]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent_0,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,transparent_0,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:28px_28px]"
-      />
+      {/* soft background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 via-white to-emerald-50" />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
-        {/* header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 drop-shadow-sm md:text-4xl dark:text-white">
-            The Most Reliable Data Extraction Services in the Market
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg dark:text-gray-300">
-            Tired of wasting time on unreliable data? Our data extraction
-            services are designed to give you accurate, double-verified results
-            you can trust. With secure backups and thorough quality checks, we
-            take care of the hard work so you can focus on making smarter
-            decisions with confidence.
+      <div className="mx-auto max-w-[1400px]  py-16 md:py-24">
+        {/* heading + lead */}
+        <header className="max-w-3xl">
+          <h1 className="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+            Smarter Web Scraping for Data
+            <br className="hidden sm:block" />
+            Driven Growth
+          </h1>
+          <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
+            Our web scraping solution gives you fresh, accurate, and
+            ready-to-use information—straight from any website. From every
+            industry to market intelligence and beyond, we scrape, clean, and
+            deliver highly reliable data that helps you make confident, informed
+            business moves, not guesses.
           </p>
-        </div>
+        </header>
 
-        {/* cards */}
-        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ title, desc, Icon, accent, color }, i) => (
-            <article
-              key={i}
-              className="group relative rounded-2xl border border-black/5 bg-white/70 p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] dark:border-white/5 dark:bg-gray-900/60"
-            >
-              {/* corner gradient ribbon */}
-              <div
-                className={`pointer-events-none absolute -right-10 -top-10 h-28 w-28 rotate-12 rounded-2xl bg-gradient-to-br ${accent} blur-2xl opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
-                aria-hidden="true"
-              />
+        {/* features (no cards) */}
+        <div className="mt-14 grid gap-y-10 gap-x-8 md:grid-cols-3">
+          <Feature
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-7 w-7"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            }
+            title={
+              <>
+                Proven Quality <br className="hidden sm:block" /> That Delivers
+              </>
+            }
+            text="Backed by multiple layers of rigorous validation, our data extraction pipeline ensures unmatched precision, reliability, and timeliness, empowering your business to operate with clean, trustworthy information that drives long-term success."
+          />
 
-              <div className="flex items-start gap-4">
-                <div className="rounded-xl border border-black/5 bg-white/70 p-3 shadow-sm dark:border-white/10 dark:bg-gray-800/60">
-                  <Icon className={`h-6 w-6 ${color}`} aria-hidden="true" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                    {desc}
-                  </p>
-                </div>
-              </div>
+          <Feature
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-7 w-7"
+              >
+                <path d="M3 17l6-6 4 4 8-8" />
+                <path d="M14 7h7v7" />
+              </svg>
+            }
+            title={
+              <>
+                Stay One Step
+                <br className="hidden sm:block" /> Ahead
+              </>
+            }
+            text="In the fast-changing world of the web, our scraping infrastructure keeps you one step ahead by monitoring websites for changes, adapting automatically, and resolving issues before they break—so your business continues to receive reliable, high-quality data without interruptions."
+          />
 
-              {/* bottom accent line */}
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-gray-300/70 to-transparent dark:via-white/20" />
-              {/* micro detail */}
-              <div className="mt-3 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                <span className="inline-flex items-center rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
-                  Verified
-                </span>
-                <span className="inline-flex items-center rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
-                  Secure
-                </span>
-                <span className="inline-flex items-center rounded-full border border-gray-200 px-2 py-0.5 dark:border-white/10">
-                  Scalable
-                </span>
-              </div>
-            </article>
-          ))}
+          <Feature
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-7 w-7"
+              >
+                <path d="M9 3h6v4a2 2 0 0 0 2 2h4v6h-4a2 2 0 0 0-2 2v4H9v-4a2 2 0 0 0-2-2H3V9h4a2 2 0 0 0 2-2V3z" />
+              </svg>
+            }
+            title={
+              <>
+                Customized Solutions for
+                <br className="hidden sm:block" /> Your Business
+              </>
+            }
+            text="Our web scraping solutions are designed to adapt seamlessly to your business needs, whether you’re a startup looking for market insights or an enterprise managing millions of records. With fully customizable pipelines, scalable infrastructure, and flexible integration options, we ensure you always get data that aligns perfectly with your goals—reliable, accurate, and ready to use."
+          />
         </div>
       </div>
     </section>
+  );
+}
+
+/* --- subcomponent (list item without card) --- */
+function Feature({ icon, title, text }) {
+  return (
+    <div className="relative">
+      {/* badge + title */}
+      <div className="flex h-12 w-12 mb-4 items-center justify-center rounded-2xl bg-gradient-to-tr from-emerald-500 to-sky-500 text-white ring-1 ring-white/60 shadow-md">
+        {icon}
+      </div>
+      <h3 className="text-[22px] font-bold leading-snug text-slate-900">
+        {title}
+      </h3>
+
+      {/* connector line */}
+      <div className="mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400" />
+
+      {/* description */}
+      <p className="mt-4 text-[19px] leading-relaxed">{text}</p>
+    </div>
   );
 }

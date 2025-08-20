@@ -3,7 +3,15 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Database, Globe, Shield, ShieldOff, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Zap,
+  Database,
+  Globe,
+  Shield,
+  ShieldOff,
+  ShieldCheck,
+} from "lucide-react";
 
 const floatingIcons = [
   { icon: Database, delay: 0, x: 100, y: 50 },
@@ -81,12 +89,10 @@ export default function HeroSection() {
               <motion.h1
                 custom={1}
                 variants={fadeUp}
-                className="text-balance font-extrabold leading-tight text-white mb-3
-                           text-[clamp(1.35rem,2.4vw+1rem,2.4rem)]
-                           sm:text-[clamp(1.6rem,2vw+1.2rem,2.7rem)]
-                           xl:text-[clamp(2rem,1.4vw+1.2rem,3rem)]"
+                className="text-balance font-extrabold leading-tight text-white mb-3 text-5xl"
               >
-                Your Own Web Scraping Team on Demand
+                Your Web Scraping Team <br />
+                on Demand
               </motion.h1>
 
               <motion.p
@@ -95,8 +101,8 @@ export default function HeroSection() {
                 className="text-white/90 mb-5 max-w-[65ch] text-[15px] sm:text-base md:text-[17px] leading-relaxed"
               >
                 We deliver structured data at large scale - no Cloudflare, no
-                captchas, no blocks, no maintenance. Just tell us what you need
-                we&apos;ll handle everything.
+                Captchas, no hassles. Just tell us what you need we&apos;ll
+                handle everything.
               </motion.p>
 
               <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mt-8 justify-center lg:justify-start mb-10">
@@ -126,7 +132,7 @@ export default function HeroSection() {
                   </div>
                   <div className="text-gray-400 font-medium text-xs sm:text-sm">
                     No Proxy or <br className="hidden sm:block" /> Maintenance
-                    Hassle
+                    Hassles
                   </div>
                 </div>
               </div>

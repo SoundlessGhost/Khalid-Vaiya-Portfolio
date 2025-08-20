@@ -3,6 +3,7 @@
 import Link from "next/link";
 import TermsThenFormInDialog from "./TermsGatedForm";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   Scale,
@@ -20,6 +21,25 @@ import {
   Settings,
   Ticket,
 } from "lucide-react";
+
+// NavLink Function
+function NavLink({ href, children, isDark }) {
+  const base = "group relative font-bold px-3 text-[16px] transition";
+  const tone = isDark
+    ? "text-slate-200/90 hover:text-white"
+    : "text-slate-700 hover:text-slate-900";
+  return (
+    <Link href={href} className={`${base} ${tone}`}>
+      {children}
+      <span
+        className={`pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px origin-left scale-x-0 transition-transform duration-300
+                        ${
+                          isDark ? "bg-emerald-400" : "bg-slate-900/40"
+                        } group-hover:scale-x-100`}
+      />
+    </Link>
+  );
+}
 
 // Scroll Navbar
 function useScrollNav() {
@@ -53,7 +73,7 @@ function useOutsideClose(ref, onClose) {
 }
 
 // Flyout Components
-function Flyout({ label, items }) {
+function Flyout({ label, items, isDark = true }) {
   const [open, setOpen] = useState(false);
 
   const boxRef = useRef(null);
@@ -65,39 +85,78 @@ function Flyout({ label, items }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="group py-2 font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition">
+      <button
+        className={`group py-2 font-bold px-3 text-[16px] transition
+                          ${
+                            isDark
+                              ? "text-slate-200/90 hover:text-white"
+                              : "text-slate-700 hover:text-slate-900"
+                          }`}
+      >
         {label}
-        <span className="block h-px scale-x-0 bg-emerald-400 transition-all duration-300 group-hover:scale-x-100" />
+        <span
+          className={`block h-px scale-x-0 transition-all duration-300 group-hover:scale-x-100
+                          ${isDark ? "bg-emerald-400" : "bg-slate-900/40"}`}
+        />
       </button>
 
       {open && <div className="absolute left-0 right-0 top-full h-2" />}
 
-      {/* panel */}
       <div
         ref={boxRef}
-        className={`absolute left-1/2 top-full z-50 mt-1 w-[420px] -translate-x-1/2
-  rounded-xl border border-white/10 bg-slate-900/70 p-3 backdrop-blur-xl
-  shadow-2xl ring-1 ring-black/20 transition-all duration-200
-  ${
-    open
-      ? "opacity-100 translate-y-0"
-      : "pointer-events-none opacity-0 -translate-y-1"
-  }`}
+        className={`absolute left-1/2 top-full z-50 mt-1 w-[420px] -translate-x-1/2 rounded-xl p-3 shadow-2xl ring-1 transition-all duration-200
+                   ${
+                     open
+                       ? "opacity-100 translate-y-0"
+                       : "pointer-events-none opacity-0 -translate-y-1"
+                   }
+                   ${
+                     isDark
+                       ? "border-white/10 bg-slate-900/70 backdrop-blur-xl ring-black/20"
+                       : "border-slate-200 bg-white/90 backdrop-blur-xl ring-slate-900/5"
+                   }`}
       >
-        <ul className="grid grid-cols-1 divide-y divide-white/5">
+        <ul
+          className={`grid grid-cols-1 divide-y ${
+            isDark ? "divide-white/5" : "divide-slate-200"
+          }`}
+        >
           {items.map((it) => (
             <li key={it.title}>
               <Link
                 href={it.href}
-                className="flex items-start gap-3 rounded-lg px-3 py-3 hover:bg-white/5"
+                className={`flex items-start gap-3 rounded-lg px-3 py-3 hover:bg-white/5
+                            ${
+                              isDark
+                                ? "text-white"
+                                : "text-slate-900 hover:bg-slate-50"
+                            }`}
               >
                 {"icon" in it && (
-                  <span className="text-emerald-400">{it.icon}</span>
+                  <span
+                    className={`${
+                      isDark ? "text-emerald-400" : "text-emerald-600"
+                    }`}
+                  >
+                    {it.icon}
+                  </span>
                 )}
                 <div>
-                  <p className="text-sm font-semibold text-white">{it.title}</p>
+                  <p
+                    className={`text-sm font-semibold ${
+                      isDark ? "text-white" : "text-slate-900"
+                    }`}
+                  >
+                    {it.title}
+                  </p>
                   {"desc" in it && (
-                    <p className="text-xs text-slate-300/80">{it.desc}</p>
+                    <p
+                      className={`text-xs ${
+                        isDark ? "text-slate-300/80" : "text-slate-600"
+                      }`}
+                    >
+                      {it.desc}
+                    </p>
                   )}
                 </div>
               </Link>
@@ -216,6 +275,14 @@ export default function NavbarAnimated() {
   const { hidden, elevated } = useScrollNav();
   const [mobile, setMobile] = useState(false);
 
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const isDark = isHome && !elevated;
+  const surface = isDark
+    ? "bg-slate-900/50 backdrop-blur-md border-transparent text-white"
+    : "bg-white/80 backdrop-blur-xl border-slate-200 text-slate-900";
+
   return (
     <>
       {/* Top Navbar */}
@@ -223,69 +290,49 @@ export default function NavbarAnimated() {
         className={`fixed inset-x-0 top-0 z-50 transition-transform duration-300
         ${hidden ? "-translate-y-full" : "translate-y-0"}`}
       >
-        <div
-          className={` px-4 sm:px-6 lg:px-8 border-b
-          ${
-            elevated
-              ? "bg-slate-900/70 backdrop-blur-xl border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]"
-              : "bg-slate-900/50 backdrop-blur-md border-transparent"
-          }`}
-        >
+        <div className={`px-4 sm:px-6 lg:px-8 border-b ${surface}`}>
           <div className="flex h-16 items-center justify-between">
             {/* Brand */}
             <Link
               href="/"
-              className="text-xl font-bold tracking-tight text-white"
+              className={`text-xl font-bold tracking-tight ${
+                isDark ? "text-white" : "text-slate-900"
+              }`}
             >
-              <span className="text-emerald-400">Fast</span>scraping
+              <span className="text-emerald-500">Fast</span>scraping
             </Link>
 
             <div className="flex h-16 items-center justify-between">
               {/* Desktop Nav */}
               <nav className="hidden md:flex items-center gap-1">
-                <Link
-                  href="/"
-                  className="group relative font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition"
-                >
+                <NavLink href="/" isDark={isDark}>
                   Home
-                  <span
-                    className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
-               origin-left scale-x-0 bg-emerald-400 transition-transform duration-300
-               group-hover:scale-x-100"
-                  />
-                </Link>
-                <Flyout label="Web scraping" items={webScraping} />
-                <Flyout label="Solutions" items={solutions} />
-                <Link
-                  href="/pricing"
-                  className="group relative font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition"
-                >
+                </NavLink>
+                <Flyout
+                  label="Web scraping"
+                  items={webScraping}
+                  isDark={isDark}
+                />
+                <Flyout label="Solutions" items={solutions} isDark={isDark} />
+                <NavLink href="/pricing" isDark={isDark}>
                   Pricing
-                  <span
-                    className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
-               origin-left scale-x-0 bg-emerald-400 transition-transform duration-300
-               group-hover:scale-x-100"
-                  />
-                </Link>
-                <Flyout label="Resources" items={resources} />
-                <Link
-                  href="/about"
-                  className="group relative font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition"
-                >
+                </NavLink>
+                <Flyout label="Resources" items={resources} isDark={isDark} />
+                <NavLink href="/about" isDark={isDark}>
                   About
-                  <span
-                    className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
-               origin-left scale-x-0 bg-emerald-400 transition-transform duration-300
-               group-hover:scale-x-100"
-                  />
-                </Link>
+                </NavLink>
               </nav>
 
               {/* CTA  Mobile */}
               <div className="flex items-center gap-3">
                 <TermsThenFormInDialog btn_name="Book a Demo" />
                 <button
-                  className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/5 text-white ring-1 ring-white/10"
+                  className={`md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md ring-1
+                              ${
+                                isDark
+                                  ? "bg-white/5 text-white ring-white/10"
+                                  : "bg-slate-100 text-slate-900 ring-slate-300"
+                              }`}
                   onClick={() => setMobile((s) => !s)}
                   aria-label="Toggle menu"
                 >
@@ -314,7 +361,13 @@ export default function NavbarAnimated() {
         </div>
 
         {/* Subtle bottom separator glow to match hero */}
-        <div className="pointer-events-none h-px w-full bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
+        <div
+          className={`pointer-events-none h-px w-full ${
+            isDark
+              ? "bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent"
+              : "bg-slate-200"
+          }`}
+        />
       </div>
 
       {/* Mobile Drawer */}
