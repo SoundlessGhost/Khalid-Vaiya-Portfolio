@@ -245,7 +245,7 @@ export default function NavbarAnimated() {
               <nav className="hidden md:flex items-center gap-1">
                 <Link
                   href="/"
-                  className="group relative font-bold py-2 px-3 text-[16px] text-slate-200/90 hover:text-white transition"
+                  className="group relative font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition"
                 >
                   Home
                   <span
@@ -256,10 +256,21 @@ export default function NavbarAnimated() {
                 </Link>
                 <Flyout label="Web scraping" items={webScraping} />
                 <Flyout label="Solutions" items={solutions} />
+                <Link
+                  href="/pricing"
+                  className="group relative font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition"
+                >
+                  Pricing
+                  <span
+                    className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px
+               origin-left scale-x-0 bg-emerald-400 transition-transform duration-300
+               group-hover:scale-x-100"
+                  />
+                </Link>
                 <Flyout label="Resources" items={resources} />
                 <Link
                   href="/about"
-                  className="group relative font-bold py-2 px-3 text-[16px] text-slate-200/90 hover:text-white transition"
+                  className="group relative font-bold px-3 text-[16px] text-slate-200/90 hover:text-white transition"
                 >
                   About
                   <span
@@ -329,6 +340,13 @@ export default function NavbarAnimated() {
             items={solutions}
             onClick={() => setMobile(false)}
           />
+          <Link
+            href="/pricing"
+            onClick={() => setMobile(false)}
+            className="flex items-center gap-2 rounded-md py-4 font-bold text-sm text-slate-300 border-b border-white/10"
+          >
+            Pricing
+          </Link>
           <MobileGroup
             label="Resources"
             items={resources}

@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Database, Globe, Shield } from "lucide-react";
+import { ArrowRight, Zap, Database, Globe, Shield, ShieldOff, ShieldCheck } from "lucide-react";
 
 const floatingIcons = [
   { icon: Database, delay: 0, x: 100, y: 50 },
@@ -98,6 +98,38 @@ export default function HeroSection() {
                 captchas, no blocks, no maintenance. Just tell us what you need
                 we&apos;ll handle everything.
               </motion.p>
+
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mt-8 justify-center lg:justify-start mb-10">
+                <div className="flex items-center">
+                  <div className="flex justify-center mr-3">
+                    <ShieldOff className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div className="text-gray-400 font-medium text-xs sm:text-sm">
+                    Bypass Cloudflare <br className="hidden sm:block" /> &
+                    Captchas
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="flex justify-center mr-3">
+                    <Database className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div className="text-gray-400 font-medium text-xs sm:text-sm">
+                    Large-Scale On <br className="hidden sm:block" /> Demand
+                    Scraping
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="flex justify-center mr-3">
+                    <ShieldCheck className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div className="text-gray-400 font-medium text-xs sm:text-sm">
+                    No Proxy or <br className="hidden sm:block" /> Maintenance
+                    Hassle
+                  </div>
+                </div>
+              </div>
 
               <motion.div
                 custom={3}
