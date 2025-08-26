@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import PricingComparisonTable from "./PricingComparisonTable";
 
 const Check = (props) => (
   <svg
@@ -109,7 +110,7 @@ export default function PricingContactOnly({
       <section>
         <div className="mx-auto max-w-7xl px-6">
           {/* Cards */}
-          <div className="mx-auto mt-14 grid max-w-6xl gap-6 sm:mt-16 md:grid-cols-3">
+          <div className="mx-auto mt-14 grid max-w-4xl gap-6 sm:mt-16 grid-cols-1 sm:grid-cols-2 place-content-center">
             {/* Starter */}
             <div className="rounded-2xl border border-gray-200 p-6 shadow-sm md:p-8">
               <div>
@@ -195,7 +196,7 @@ export default function PricingContactOnly({
             </div>
 
             {/* Enterprise */}
-            <div className="rounded-2xl border border-gray-200 p-6 shadow-sm md:p-8">
+            {/* <div className="rounded-2xl border border-gray-200 p-6 shadow-sm md:p-8">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900">
                   Enterprise
@@ -233,16 +234,18 @@ export default function PricingContactOnly({
               <ContactBtn className="mt-8 bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus:ring-2 focus:ring-gray-900/10">
                 Talk to Sales
               </ContactBtn>
-            </div>
+            </div> */}
           </div>
 
           {/* Footnote */}
-          <p className="mx-auto mt-10 max-w-3xl text-center text-sm text-gray-500">
+          <p className="mx-auto mt-10 max-w-3xl text-center text-sm text-gray-500 mb-10">
             Get a tailored quote based on your use case, data volume, and
             compliance requirements.
           </p>
         </div>
       </section>
+
+      <PricingComparisonTable />
     </div>
   );
 }

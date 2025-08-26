@@ -1,16 +1,18 @@
 import React from "react";
-import CustomizedDataSection from "@/components/Solutions Components/Customized Data/customized-data-section";
-import CustomizedDataHeroSection from "@/components/Solutions Components/Customized Data/customized-data-hero-section";
-import TestimonialsSection from "@/components/Solutions Components/Customized Data/customized-data-testimonials-section";
-import DataScaleSection from "@/components/Solutions Components/Customized Data/customized-data-scale-section";
+import ECommerceInventoryHeroSection from "@/components/Solutions Components/E Commerce Inventory/e-commerce-inventory-hero-section";
+import StrategicDataAdvantage from "@/components/Solutions Components/E Commerce Inventory/e-commerce-inventory-strategic-advantage";
+import QualityImpactSection from "@/components/Solutions Components/E Commerce Inventory/e-commerce-inventory-quality-impact-section";
+import ProductDataCategoriesSection from "@/components/Solutions Components/E Commerce Inventory/e-commerce-inventory-product-categories";
+import TestimonialsRow from "@/components/Solutions Components/E Commerce Inventory/e-commerce-inventory-testimonials-row";
 
 const ECommerceInventoryPricingPage = () => {
   return (
     <div>
-      <CustomizedDataHeroSection />
-      <CustomizedDataSection />
-      <TestimonialsSection />
-      <DataScaleSection />
+      <ECommerceInventoryHeroSection />
+      <StrategicDataAdvantage />
+      <QualityImpactSection />
+      <ProductDataCategoriesSection />
+      <TestimonialsRow />
     </div>
   );
 };

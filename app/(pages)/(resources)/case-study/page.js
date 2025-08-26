@@ -1,99 +1,97 @@
-import AnimatedHero from "@/components/AnimatedHero";
 import React from "react";
-
-const caseStudies = [
-  {
-    company: "RetailNova",
-    challenge: "Unable to track competitor pricing across 500+ websites",
-    solution:
-      "Fastscraping deployed automated scraping bots that collected pricing data daily.",
-    result: "Price optimization increased revenue by 12% in 3 months.",
-  },
-  {
-    company: "MarketLens",
-    challenge: "Manual research for market trends took weeks.",
-    solution: "Real-time scraping of industry news and product listings.",
-    result: "Cut research time by 85% and improved decision-making speed.",
-  },
-  {
-    company: "AutoTrendz",
-    challenge: "Difficulty monitoring car listings across marketplaces.",
-    solution:
-      "Custom scraper to pull car data with filters and location-based logic.",
-    result:
-      "Increased lead conversion by 30% due to better inventory matching.",
-  },
-];
+import CaseStudyHero from "@/components/Page Components/Case Study/case-study-hero-section";
+import ClientContext from "@/components/Page Components/Case Study/case-study-client-context";
+import ProblemConstraints from "@/components/Page Components/Case Study/case-study-problem-constraints";
+import { SolutionArchitecture } from "@/components/Page Components/Case Study/case-study-solution-architecture";
+import { ProcessQuality } from "@/components/Page Components/Case Study/casae-study-process-quality";
+import { ChallengesSolved } from "@/components/Page Components/Case Study/casae-study-challenges-solved";
 
 const CaseStudy = () => {
   return (
     <div>
-      <AnimatedHero
-        title="Case Study"
-        subtitle="Explore in-depth case studies that reveal how Fastscraping has
-            helped top manufacturers, retailers, and global enterprises tackle
-            complex data challenges with precision."
+      <CaseStudyHero />
+      <ClientContext
+        industry="Retail / E-commerce"
+        clientName="Anonymous CE Retailer"
+        clientType="B2C"
+        location="EU"
+        goal="Live price tracking across categories with hourly refresh."
+        website="https://example.com"
+        stats={[
+          { label: "Markets", value: "5" },
+          { label: "SKU count", value: "48k+" },
+        ]}
       />
-      {/* case study section */}
-
-      <section className="bg-gray-50 py-40">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Real Success Stories
-          </h2>
-          <p className="text-lg text-gray-600 mb-12">
-            See how our clients use Fastscraping to automate data collection and
-            gain a competitive edge.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-            {caseStudies.map((study, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md text-left hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-xl font-semibold text-[#0a5c5c] mb-2">
-                  {study.company}
-                </h3>
-                <p className="mb-2">
-                  <span className="font-medium">Challenge:</span>{" "}
-                  {study.challenge}
-                </p>
-                <p className="mb-2">
-                  <span className="font-medium">Solution:</span>{" "}
-                  {study.solution}
-                </p>
-                <p className="mb-2">
-                  <span className="font-medium">Result:</span> {study.result}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-gray-600 text-white rounded-xl py-10 px-6">
-            <h3 className="text-2xl font-semibold mb-2">
-              Want to create your own success story?
-            </h3>
-            <p className="mb-4">
-              Start scraping with us today — no coding required!
-            </p>
-            <div className="mt-10">
-              <button className="button1 inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:-translate-y-0.5 hover:shadow">
-                Get Started
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-4 w-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProblemConstraints
+        problems={[
+          "Dynamic pricing with frequent changes",
+          "CAPTCHA walls on product pages",
+          "Geo-blocking & rate limiting",
+        ]}
+        constraints={[
+          "Respect robots.txt & terms of service",
+          "Do not scrape PII",
+          "Maintain < 1 req/s per host",
+        ]}
+      />
+      <SolutionArchitecture
+        title="Solution Architecture"
+        nodes={[
+          "Crawler (Playwright)",
+          "Queue (Redis)",
+          "Parser (Node/Python)",
+          "QA (GE)",
+          "Storage (Postgres/S3)",
+          "Dashboard (Metabase)",
+        ]}
+        highlights={[
+          "Rate-aware crawling with backoff & retries",
+          "Rotating proxies + geo-routing",
+          "Schema validation & dedupe pipeline",
+          "DOM-change detection alerts",
+        ]}
+        stack={[
+          "Playwright",
+          "Redis",
+          "Node.js",
+          "Python",
+          "PostgreSQL",
+          "S3",
+          "Metabase",
+        ]}
+        note="We respect robots.txt & site TOS. No PII is collected or stored."
+      />
+      <ProcessQuality
+        process={[
+          {
+            title: "Discovery & PoC",
+            description: "Scope sources, define schema, sample run.",
+            duration: "Week 1",
+          },
+          {
+            title: "Hardening",
+            description:
+              "Retries, human-like delays, CAPTCHA plan, change-detection.",
+            duration: "Weeks 2–3",
+          },
+          {
+            title: "Scale-up",
+            description: "Scheduling, monitoring/alerts, docs & handover.",
+            duration: "Ongoing",
+          },
+        ]}
+        quality={[
+          "Schema validation & null handling",
+          "Dedupe & normalization rules",
+          "Rate-limit aware crawling + backoff",
+          "Robots.txt & TOS respected",
+          "No PII collected or stored",
+          "Data retention policy (90 days)",
+          "Source change detection (DOM hash/diff)",
+          "Signed data-sharing agreement",
+        ]}
+      />
+      <ChallengesSolved />
     </div>
   );
 };
