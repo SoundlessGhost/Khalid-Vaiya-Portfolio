@@ -48,18 +48,6 @@ export default function ECommerceInventoryHeroSection() {
                 Watch Demo
               </button>
             </div>
-
-            {/* small perks */}
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-600 lg:justify-start">
-              <div className="inline-flex items-center gap-2">
-                <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
-                Setup in 5 minutes
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <span className="inline-block h-2 w-2 rounded-full bg-slate-400" />
-                No credit card required
-              </div>
-            </div>
           </div>
 
           {/* Right metrics grid */}

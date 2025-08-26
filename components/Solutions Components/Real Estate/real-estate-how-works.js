@@ -120,22 +120,6 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          variants={item}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.4 }}
-          className="mt-12 flex justify-center"
-        >
-          <Link
-            href="#"
-            className="inline-flex items-center gap-2 rounded-lg px-5 py-3 font-medium bg-emerald-400 text-white shadow-sm hover:shadow-md hover:bg-emerald-500 transition"
-          >
-            Book a Demo <span aria-hidden>→</span>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
