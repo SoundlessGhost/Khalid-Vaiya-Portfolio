@@ -1,10 +1,12 @@
+import PricingSection from "@/components/PricingSection";
 import React from "react";
-import PricingContactOnly from "@/components/PricingContactOnly";
+// import PricingContactOnly from "@/components/PricingContactOnly";
 
 const PricingPage = () => {
   return (
     <div>
-      <PricingContactOnly />
+      <PricingSection />
+      {/* <PricingContactOnly /> */}
     </div>
   );
 };
