@@ -1,55 +1,82 @@
-import Image from "next/image";
-import React from "react";
+// components/JobHeroSection.jsx
+"use client";
 
-const JobListingHeroSection = () => {
+export default function JobListingHeroSection() {
   return (
-    <section className="bg-gradient-to-br from-[#e6f4ea] to-[#fce4e4] pt-48 pb-28">
-      <div className="max-w-9xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-        {/* Left Side Content */}
-        <div>
-          <p className="text-red-500 font-semibold text-sm uppercase mb-2">
-            Job Listings Data Collection
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Streamline Job Data
-            <br />
-            Acquisition with Powerful Automation
+    <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-sky-50">
+      {/* Decorative background shapes */}
+      <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-gradient-to-tr from-indigo-200/40 to-sky-100 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-gradient-to-tr from-sky-200/30 to-indigo-100 blur-3xl" />
+
+      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:flex lg:items-center lg:justify-between lg:gap-16">
+        {/* Left Content */}
+        <div className="max-w-2xl text-center lg:text-left">
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            Unlock Strategic HR with Job Market Intelligence
           </h1>
-          <p className="text-gray-700 text-lg mb-8">
-            Gain access to millions of up-to-date job listings customized to
-            your specific needs. Our advanced solutions collect real-time,
-            accurate data from diverse platforms—giving you the edge in today’s
-            competitive hiring landscape.
+          <p className="mt-6 text-lg leading-7 text-slate-600">
+            Transform raw web data into actionable intelligence. Empower your
+            team to understand job market trends, optimize job postings, and
+            make evidence-based decisions that drive growth.
           </p>
-          <div className="mt-10">
-            <button className="button1 inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:-translate-y-0.5 hover:shadow">
-              Get Started
-              <svg
-                viewBox="0 0 24 24"
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </button>
+
+          {/* Buttons */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+            <a
+              href="#"
+              className="rounded-full bg-gradient-to-r from-indigo-600 to-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:scale-[1.02] hover:shadow-xl"
+            >
+              Talk to a Data Expert
+            </a>
+            <a
+              href="#"
+              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 transition hover:bg-slate-50 hover:text-slate-900"
+            >
+              See Sample Data
+            </a>
+          </div>
+
+          {/* Ratings */}
+          <div className="mt-8 flex items-center justify-center gap-6 lg:justify-start">
+            <div className="flex items-center gap-1">
+              <span className="text-red-500 font-semibold">G2</span>
+              <span className="ml-1 text-yellow-500">★★★★★</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-yellow-600 font-semibold">Capterra</span>
+              <span className="ml-1 text-yellow-500">★★★★☆</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-green-600 font-semibold">Trustpilot</span>
+              <span className="ml-1 text-green-500">★★★★☆</span>
+            </div>
           </div>
         </div>
 
-        {/* Right Side Image */}
-        <div className="flex justify-center">
-          <Image
-            src="/images/Job Listing/Job hunt-amico.png"
-            alt="Web scraping illustration"
-            width={400}
-            height={300}
-            className="w-full max-w-md"
-          />
+        {/* Right Decorative Illustration (Optional) */}
+        <div className="mt-12 hidden flex-1 items-center justify-center lg:mt-0 lg:flex">
+          <div className="relative">
+            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-tr from-indigo-200/40 to-sky-100 blur-2xl"></div>
+            <div className="relative rounded-3xl bg-white p-8 shadow-xl ring-1 ring-slate-100">
+              <h3 className="text-xl font-bold text-slate-900">
+                Real-time Insights
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                Get instant access to job market data that helps you stay ahead
+                in talent acquisition.
+              </p>
+              <div className="mt-4 flex items-center gap-2">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-100 text-indigo-700 font-semibold">
+                  AI
+                </span>
+                <span className="text-sm text-slate-700">
+                  Powered by Data Intelligence
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default JobListingHeroSection;
+}

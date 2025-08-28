@@ -1,16 +1,14 @@
 import React from "react";
-import CustomizedDataSection from "@/components/Solutions Components/Customized Data/customized-data-section";
-import CustomizedDataHeroSection from "@/components/Solutions Components/Customized Data/customized-data-hero-section";
-import TestimonialsSection from "@/components/Solutions Components/Customized Data/customized-data-testimonials-section";
-import DataScaleSection from "@/components/Solutions Components/Customized Data/customized-data-scale-section";
+import CustomizedDataHero from "@/components/Solutions Components/Customized Data/customized-data-hero-section";
+import HowWeDeliverCustomized from "@/components/Solutions Components/Customized Data/customized-data-section";
+import MillionDataSection from "@/components/Solutions Components/Customized Data/customized-data-scale-section";
 
 const CustomizedDataPage = () => {
   return (
     <div>
-      <CustomizedDataHeroSection />
-      <CustomizedDataSection />
-      <TestimonialsSection />
-      <DataScaleSection />
+      <CustomizedDataHero />
+      <HowWeDeliverCustomized />
+      <MillionDataSection />
     </div>
   );
 };

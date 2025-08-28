@@ -1,138 +1,157 @@
+// components/EcomInventoryHero.jsx
 "use client";
 
-export default function ECommerceInventoryHeroSection() {
-  return (
-    <section className="relative overflow-hidden pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-24 lg:pt-32">
-      {/* ✅ Soft radial wash (lighter on mobile) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(16,185,129,0.18),transparent_60%)] opacity-80 sm:opacity-100"
-      />
-      {/* ✅ Faint grid (responsive density) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(2,6,23,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(2,6,23,0.025)_1px,transparent_1px)] [background-size:18px_18px] sm:[background-size:24px_24px] lg:[background-size:28px_28px]"
-      />
-      {/* ✅ Soft blobs (dim on small) */}
-      <div className="pointer-events-none absolute -top-32 -left-32 h-64 w-64 rounded-full bg-violet-100/40 blur-3xl sm:h-80 sm:w-80 md:opacity-100 opacity-70" />
-      <div className="pointer-events-none absolute -bottom-40 -right-20 h-72 w-72 rounded-full bg-emerald-100/40 blur-3xl sm:h-96 sm:w-96 md:opacity-100 opacity-70" />
+export default function EcomInventoryHero() {
+  const metrics = [
+    {
+      label: "Products Tracked",
+      value: "127,500",
+      delta: "+12.5%",
+      deltaTone: "bg-indigo-50 text-indigo-700 ring-indigo-200",
+      iconBg: "bg-amber-50 text-amber-600 ring-amber-200",
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+          <path d="M3 7l9-4 9 4-9 4-9-4Z" />
+          <path d="M3 12l9 4 9-4" />
+          <path d="M3 17l9 4 9-4" />
+        </svg>
+      ),
+    },
+    {
+      label: "Price Accuracy",
+      value: "342%",
+      delta: "+23.1%",
+      deltaTone: "bg-emerald-50 text-emerald-700 ring-emerald-200",
+      iconBg: "bg-emerald-50 text-emerald-600 ring-emerald-200",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M4 12l6 6L20 6" />
+        </svg>
+      ),
+    },
+    {
+      label: "Conversion Boost",
+      value: "89.7%",
+      delta: "+8.3%",
+      deltaTone: "bg-indigo-50 text-indigo-700 ring-indigo-200",
+      iconBg: "bg-sky-50 text-sky-600 ring-sky-200",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M3 3v18h18" />
+          <path d="M7 15l4-4 3 3 5-7" />
+        </svg>
+      ),
+    },
+    {
+      label: "Time Saved",
+      value: "4.2hrs",
+      delta: "+15.2%",
+      deltaTone: "bg-orange-50 text-orange-700 ring-orange-200",
+      iconBg: "bg-yellow-50 text-yellow-600 ring-yellow-200",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 3" />
+        </svg>
+      ),
+    },
+  ];
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 isolation-auto">
-        {/* ✅ Responsive wrapper: 1col -> 2col */}
-        <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left copy */}
-          <div className="order-1 text-center lg:order-none lg:text-left">
-            <div className="mx-auto mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200/60 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 shadow-sm backdrop-blur lg:mx-0">
+  return (
+    <section className="relative overflow-hidden pb-14 pt-20 sm:pb-20 sm:pt-24 lg:pb-24 lg:pt-28">
+      {/* background: soft grid + corner wash */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(2,6,23,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(2,6,23,0.04)_1px,transparent_1px)] [background-size:22px_22px]"
+      />
+      <div className="pointer-events-none absolute -right-24 -bottom-24 h-[28rem] w-[28rem] rounded-full bg-emerald-200/20 blur-3xl" />
+      <div className="pointer-events-none absolute -top-28 -left-24 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl" />
+
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+          {/* Left: copy */}
+          <div>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-medium text-slate-600 shadow-sm backdrop-blur">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500" />
               Real-Time Inventory Insights
             </div>
 
-            <h1 className="text-balance text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
-              Smarter E-Commerce Decisions with Web Scraping Data
+            <h1 className="text-balance text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl lg:text-5xl">
+              Smarter E-Commerce
+              <br />
+              Decisions with
+              <br />
+              Web Scraping Data
             </h1>
 
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
               Monitor competitor pricing, track stock availability, and get
               real-time insights into your market. Our web scraping technology
               helps you stay ahead, optimize inventory, and maximize profit with
               accurate, up-to-date data.
             </p>
 
-            {/* CTAs */}
-            <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
-              <button className="w-full rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-slate-800 sm:w-auto">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <button className="rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-slate-800">
                 Start Free Trial
               </button>
-              <button className="w-full rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 sm:w-auto">
-                <span className="mr-2 inline-block h-0 w-0 border-y-4 border-l-6 border-y-transparent border-l-slate-900" />
+              <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full ring-1 ring-slate-300">
+                  ▶
+                </span>
                 Watch Demo
               </button>
             </div>
           </div>
 
-          {/* Right metrics grid */}
-          <div className="order-first w-full lg:order-none">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
-              {/* Card 1 */}
-              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-50 text-base text-indigo-600">
-                      📦
-                    </span>
-                    <span className="text-xs font-semibold text-slate-500">
-                      Products Tracked
-                    </span>
+          {/* Right: metric cards */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {metrics.map((m, i) => (
+              <div
+                key={i}
+                className="relative rounded-3xl bg-white/80 p-5 shadow-[0_10px_30px_rgba(2,6,23,0.08)] ring-1 ring-slate-100 backdrop-blur transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(2,6,23,0.12)]"
+              >
+                {/* header */}
+                <div className="flex items-center justify-between">
+                  <div
+                    className={`inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-[11px] font-medium ring-1 ${m.iconBg}`}
+                  >
+                    {m.icon}
+                    <span className="text-slate-700">{m.label}</span>
                   </div>
-                  <span className="rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold text-indigo-600">
-                    +12.5%
+                  <span
+                    className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ring-1 ${m.deltaTone}`}
+                  >
+                    {m.delta}
                   </span>
                 </div>
-                <div className="mt-3 text-2xl font-bold text-slate-900 sm:mt-4 sm:text-3xl">
-                  127,500
+                {/* value */}
+                <div className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900">
+                  {m.value}
                 </div>
-              </div>
 
-              {/* Card 2 */}
-              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-50 text-base text-emerald-600">
-                      💰
-                    </span>
-                    <span className="text-xs font-semibold text-slate-500">
-                      Price Accuracy
-                    </span>
-                  </div>
-                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
-                    +23.1%
-                  </span>
-                </div>
-                <div className="mt-3 text-2xl font-bold text-slate-900 sm:mt-4 sm:text-3xl">
-                  342%
-                </div>
+                {/* subtle decorative bottom line */}
+                <span className="absolute bottom-0 left-0 h-1 w-0 rounded-br-3xl rounded-tl-3xl bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500 transition-all duration-300 hover:w-full" />
               </div>
-
-              {/* Card 3 */}
-              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-violet-50 text-base text-violet-600">
-                      📊
-                    </span>
-                    <span className="text-xs font-semibold text-slate-500">
-                      Conversion Boost
-                    </span>
-                  </div>
-                  <span className="rounded-full bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-600">
-                    +8.3%
-                  </span>
-                </div>
-                <div className="mt-3 text-2xl font-bold text-slate-900 sm:mt-4 sm:text-3xl">
-                  89.7%
-                </div>
-              </div>
-
-              {/* Card 4 */}
-              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-50 text-base text-amber-600">
-                      ⏱️
-                    </span>
-                    <span className="text-xs font-semibold text-slate-500">
-                      Time Saved
-                    </span>
-                  </div>
-                  <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-600">
-                    +15.2%
-                  </span>
-                </div>
-                <div className="mt-3 text-2xl font-bold text-slate-900 sm:mt-4 sm:text-3xl">
-                  4.2hrs
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
