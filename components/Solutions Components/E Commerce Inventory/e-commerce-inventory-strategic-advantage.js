@@ -27,10 +27,17 @@ const tabs = [
     title: "Market Research",
     icon: <Search className="w-5 h-5 text-blue-600" />,
     content: (
-      <p className="text-slate-600 leading-relaxed">
-        Get precise, clean, and timely data for deep market insights. Track
-        competitors, analyze demand, and understand customer behavior at scale.
-      </p>
+      <>
+        <h3 className="text-xl font-semibold text-slate-900 mb-3">
+          Market Research & Trend Detection
+        </h3>
+        <p className="text-slate-600 leading-relaxed">
+          Identify emerging best-sellers, category shifts, and new market
+          opportunities before your rivals. We provide the comprehensive market
+          data you need for strategic planning, product development, and
+          confident expansion.
+        </p>
+      </>
     ),
   },
   {
@@ -38,10 +45,17 @@ const tabs = [
     title: "Personalization",
     icon: <User className="w-5 h-5 text-blue-600" />,
     content: (
-      <p className="text-slate-600 leading-relaxed">
-        Deliver highly personalized experiences by leveraging enriched customer
-        data, enabling targeted offers and smarter engagement strategies.
-      </p>
+      <>
+        <h3 className="text-xl font-semibold text-slate-900 mb-3">
+          Enhanced Customer Understanding
+        </h3>
+        <p className="text-slate-600 leading-relaxed">
+          Aggregate customer behavior data, reviews, and feedback from across
+          the web. Build rich customer profiles to power hyper-personalized
+          marketing campaigns, increase engagement, and boost customer lifetime
+          value.
+        </p>
+      </>
     ),
   },
   {
@@ -49,10 +63,16 @@ const tabs = [
     title: "Inventory & Ops",
     icon: <Package className="w-5 h-5 text-blue-600" />,
     content: (
-      <p className="text-slate-600 leading-relaxed">
-        Keep operations efficient with real-time inventory tracking, supply
-        chain insights, and competitive monitoring for better decision-making.
-      </p>
+      <>
+        <h3 className="text-xl font-semibold text-slate-900 mb-3">
+          Optimized Inventory & Operations
+        </h3>
+        <p className="text-slate-600 leading-relaxed">
+          Monitor competitor stock levels and assortment strategies to optimize
+          your own inventory. Avoid stockouts of high-demand products and reduce
+          carrying costs on slow-movers with data-driven inventory management.
+        </p>
+      </>
     ),
   },
   {
@@ -60,10 +80,17 @@ const tabs = [
     title: "MAP Violation Monitoring",
     icon: <AlertTriangle className="w-5 h-5 text-blue-600" />,
     content: (
-      <p className="text-slate-600 leading-relaxed">
-        Monitor Minimum Advertised Price (MAP) violations seamlessly and protect
-        your brand value across all online marketplaces.
-      </p>
+      <>
+        <h3 className="text-xl font-semibold text-slate-900 mb-3">
+          MAP Violation Monitoring
+        </h3>
+        <p className="text-slate-600 leading-relaxed">
+          Protect your brand and maintain channel pricing integrity. We
+          automatically detect and report sellers who violate your Minimum
+          Advertised Price (MAP) policy, providing the documentation you need
+          for enforcement.
+        </p>
+      </>
     ),
   },
 ];

@@ -277,8 +277,9 @@ export default function NavbarAnimated() {
 
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isPricing = pathname === "/pricing";
 
-  const isDark = isHome && !elevated;
+  const isDark = (isHome || isPricing) && !elevated;
   const surface = isDark
     ? "bg-slate-900/50 backdrop-blur-md border-transparent text-white"
     : "bg-white/80 backdrop-blur-xl border-slate-200 text-slate-900";

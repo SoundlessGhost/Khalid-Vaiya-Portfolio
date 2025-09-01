@@ -1,16 +1,9 @@
 import React from "react";
-import CustomizedDataSection from "@/components/Solutions Components/Customized Data/customized-data-section";
-import CustomizedDataHeroSection from "@/components/Solutions Components/Customized Data/customized-data-hero-section";
-import TestimonialsSection from "@/components/Solutions Components/Customized Data/customized-data-testimonials-section";
-import DataScaleSection from "@/components/Solutions Components/Customized Data/customized-data-scale-section";
-
+import ProductDataCollection from "@/components/Solutions Components/Restaurant Food Pricing/restaurant-food -pricing-product-collection";
 const RestaurantFoodPricingPage = () => {
   return (
     <div>
-      <CustomizedDataHeroSection />
-      <CustomizedDataSection />
-      <TestimonialsSection />
-      <DataScaleSection />
+      <ProductDataCollection />
     </div>
   );
 };
