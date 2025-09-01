@@ -194,47 +194,6 @@ export default function PricingContactOnly({
                 Let’s Talk
               </ContactBtn>
             </div>
-
-            {/* Enterprise */}
-            {/* <div className="rounded-2xl border border-gray-200 p-6 shadow-sm md:p-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Enterprise
-                </h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  For large teams and compliance-critical pipelines
-                </p>
-              </div>
-
-              <div className="mt-6">
-                <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
-                  Custom pricing—let’s discuss
-                </span>
-              </div>
-
-              <ul className="mt-6 space-y-3 text-sm text-gray-700">
-                <li className="flex items-start gap-3">
-                  <Check className="text-green-600" /> Dedicated proxy pools &
-                  geo-targeting
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-green-600" /> Fingerprint rotation &
-                  CAPTCHA solving
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-green-600" /> SSO (SAML), audit logs,
-                  SLA
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-green-600" /> Custom connectors &
-                  managed onboarding
-                </li>
-              </ul>
-
-              <ContactBtn className="mt-8 bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus:ring-2 focus:ring-gray-900/10">
-                Talk to Sales
-              </ContactBtn>
-            </div> */}
           </div>
 
           {/* Footnote */}

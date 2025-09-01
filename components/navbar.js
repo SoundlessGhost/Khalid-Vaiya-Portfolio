@@ -205,18 +205,6 @@ const webScraping = [
 // Solutions Menu Data
 const solutions = [
   {
-    title: "Ticketing Website Pricing",
-    icon: <Ticket className="h-4 w-4" />,
-    desc: "Stay ahead with live ticket prices and competitor comparisons.",
-    href: "/ticketing-website-pricing",
-  },
-  {
-    title: "Restaurant & Food Pricing",
-    icon: <Utensils className="h-4 w-4" />,
-    desc: "Menus, dishes, and pricing organized into structured catalogs.",
-    href: "/restaurant-food-pricing",
-  },
-  {
     title: "E-Commerce & Inventory Pricing",
     icon: <ShoppingCart className="h-4 w-4" />,
     desc: "Product listings, variants, and stock data—clean and reliable.",
@@ -239,6 +227,18 @@ const solutions = [
     icon: <Settings className="h-4 w-4" />,
     desc: "Tailored data feeds with the exact fields you need, on demand.",
     href: "/customized-data",
+  },
+  {
+    title: "Ticketing Website Pricing",
+    icon: <Ticket className="h-4 w-4" />,
+    desc: "Stay ahead with live ticket prices and competitor comparisons.",
+    href: "/ticketing-website-pricing",
+  },
+  {
+    title: "Restaurant & Food Pricing",
+    icon: <Utensils className="h-4 w-4" />,
+    desc: "Menus, dishes, and pricing organized into structured catalogs.",
+    href: "/restaurant-food-pricing",
   },
 ];
 

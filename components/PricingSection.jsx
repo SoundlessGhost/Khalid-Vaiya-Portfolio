@@ -18,15 +18,6 @@ import {
   Mail,
 } from "lucide-react";
 
-// =========================================
-// Pricing Page (single file, drop-in component)
-// =========================================
-// How to use:
-// 1) Place this file in your components/ folder, e.g. components/PricingPage.jsx
-// 2) Import and render <PricingPage /> in your route (app/pricing/page.tsx or pages/pricing.tsx)
-// 3) Tailwind required. Optional: tweak brand colors in gradients below.
-// 4) No external UI libs—pure Tailwind + lucide-react icons.
-
 export default function PricingSection() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
@@ -46,26 +37,24 @@ export default function PricingSection() {
   );
 }
 
-// =========================================
-// Background Effects (subtle blobs + grid)
-// =========================================
+// -----------------------------------------
+// Background (unchanged)
+// -----------------------------------------
 function BackgroundFX() {
   return (
     <>
-      {/* dotted grid */}
       <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,theme(colors.slate.800)_1px,transparent_1px)] [background-size:24px_24px] opacity-60" />
       </div>
-      {/* color blobs */}
       <div className="pointer-events-none absolute -top-24 -right-16 h-[520px] w-[520px] rounded-full bg-gradient-to-tr from-cyan-500/20 via-blue-500/15 to-indigo-500/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-16 h-[520px] w-[520px] rounded-full bg-gradient-to-tr from-emerald-500/20 via-teal-500/15 to-cyan-500/20 blur-3xl" />
     </>
   );
 }
 
-// =========================================
+// -----------------------------------------
 // HERO
-// =========================================
+// -----------------------------------------
 function PricingHero() {
   return (
     <header className="text-center">
@@ -95,55 +84,36 @@ function PricingHero() {
   );
 }
 
-// =========================================
-// TIERS (Card‑less blocks with glass lines)
-// =========================================
+// -----------------------------------------
+// TIERS
+// -----------------------------------------
 const tierData = [
   {
-    name: "Starter",
-    tagline: "Pay-as-you-go for quick tasks",
-    highlight: "Great for POCs & one-off scrapes",
-    cta: { label: "Get API Key", href: "/signup" },
-    // No fixed prices shown; show guidance
-    blurb: "Estimate per-1k requests. No commitment.",
+    name: "One-time Scraping (Project Based)",
+    tagline: "Perfect for one-off datasets and PoCs.",
+    cta: { label: "Get a Quote", href: "/contact" }, // ★ copy tweak
     features: [
-      "Up to 50k requests / month",
-      "Shared residential proxy pool",
-      "Headless browser (Chromium)",
-      "Basic bot avoidance",
-      "Community support",
+      "One-time data collection from specific websites",
+      "Delivery in CSV, Excel, JSON",
+      "Data cleaning & deduplication",
+      "Customized selectors (title, price, reviews, contacts, etc.)",
+      "Guaranteed delivery time (24–72 hours typical)",
+      "Email/Chat support during the project",
     ],
-    limits: ["Concurrency: 2", "Retries: 2", "Timeout: 30s"],
   },
   {
-    name: "Growth",
-    tagline: "Subscription for teams in production",
-    highlight: "Priority routing & higher stability",
-    cta: { label: "Start Free Trial", href: "/trial" },
-    blurb: "Monthly bundle with volume discounts.",
-    features: [
-      "300k–2M requests / month",
-      "Dedicated geo pools + rotation",
-      "Custom headers & device profiles",
-      "Anti-captcha orchestration",
-      "Email & chat support",
-    ],
-    limits: ["Concurrency: 10", "Retries: 3", "Timeout: 45s"],
-  },
-  {
-    name: "Enterprise",
-    tagline: "Custom SLAs, data pipelines & support",
-    highlight: "White-glove setup & compliance",
+    name: "Recurring Scraping",
+    tagline: "For teams that need reliable, ongoing updates.",
     cta: { label: "Contact for Pricing", href: "/contact" },
-    blurb: "We design + operate your full data pipeline.",
     features: [
-      "Unlimited scale & dedicated IP ranges",
-      "Playwright clusters with session pinning",
-      "Schema validation & dedupe (Great Expectations)",
-      "Metabase/BigQuery/Redshift delivery",
-      "24/7 pager & uptime SLA",
+      "Daily / Weekly / Monthly automation",
+      "Continuous monitoring (price changes, new listings, sold-out, etc.)",
+      "Scheduled delivery via Email, Drive, Dropbox, or API",
+      "Data refresh & version history",
+      "Large-scale scraping (millions of rows / month)",
+      "Priority support (Slack / WhatsApp / Email)",
+      "Dedicated proxy pool for anti-bot protection",
     ],
-    limits: ["Concurrency: 50+", "Retries: 5", "Timeout: 60s"],
   },
 ];
 
@@ -154,7 +124,8 @@ function Tiers() {
         Pricing tiers
       </h2>
 
-      <div className="grid gap-6 md:gap-8 md:grid-cols-3">
+      {/* ★ 2-up centered grid with tighter gaps */}
+      <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 place-content-center gap-4 sm:gap-6 md:gap-8">
         {tierData.map((t, i) => (
           <Tier key={t.name} tier={t} index={i} />
         ))}
@@ -164,15 +135,28 @@ function Tiers() {
 }
 
 function Tier({ tier, index }) {
+  // ★ cursor-follow glow
+  const onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    const y = ((e.clientY - r.top) / r.height) * 100;
+    e.currentTarget.style.setProperty("--x", `${x}%`);
+    e.currentTarget.style.setProperty("--y", `${y}%`);
+  };
+
   return (
     <div
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur supports-[backdrop-filter]:bg-white/5"
+      onMouseMove={onMove}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.setProperty("--x", `50%`);
+        e.currentTarget.style.setProperty("--y", `50%`);
+      }}
+      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-7 backdrop-blur supports-[backdrop-filter]:bg-white/5"
       style={{
         boxShadow:
           "0 1px 0 0 rgba(255,255,255,.06) inset, 0 10px 30px -15px rgba(0,0,0,.6)",
       }}
     >
-      {/* glow border */}
       <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" />
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -192,18 +176,6 @@ function Tier({ tier, index }) {
       </div>
 
       <p className="mt-2 text-sm text-white/70">{tier.tagline}</p>
-      <p className="mt-4 text-[13px] text-white/60">{tier.blurb}</p>
-
-      <div className="mt-6 flex flex-wrap gap-2 text-[11px] text-white/70">
-        {tier.limits.map((x) => (
-          <span
-            key={x}
-            className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1"
-          >
-            {x}
-          </span>
-        ))}
-      </div>
 
       <ul className="mt-6 space-y-2 text-sm">
         {tier.features.map((f) => (
@@ -216,7 +188,12 @@ function Tier({ tier, index }) {
 
       <a
         href={tier.cta.href}
-        className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 transition hover:bg-white/20"
+        className={`mt-7 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition
+          ${
+            index === 1
+              ? "border-emerald-300/30 bg-emerald-400/15 text-white hover:bg-emerald-400/25"
+              : "border-white/10 bg-white/10 text-white/90 hover:bg-white/20"
+          }`}
       >
         {tier.cta.label} <ArrowRight className="h-4 w-4" />
       </a>
@@ -224,20 +201,19 @@ function Tier({ tier, index }) {
   );
 }
 
-// =========================================
-// Usage Estimator (no hard pricing, just UX)
-// =========================================
+// -----------------------------------------
+// Usage Estimator
+// -----------------------------------------
 function UsageEstimator() {
-  const [requests, setRequests] = useState(120000); // monthly
+  const [requests, setRequests] = useState(120000);
   const [concurrency, setConcurrency] = useState(8);
   const [headless, setHeadless] = useState(true);
 
-  // A simple mock to show an estimate band, not a price
   const band = useMemo(() => {
     let score = requests / 10000 + concurrency * 2 + (headless ? 10 : 0);
-    if (score < 35) return "Starter‑level usage";
-    if (score < 120) return "Growth‑level usage";
-    return "Enterprise‑level usage";
+    if (score < 35) return "Starter-level usage";
+    if (score < 120) return "Growth-level usage";
+    return "Enterprise-level usage";
   }, [requests, concurrency, headless]);
 
   return (
@@ -341,9 +317,9 @@ function Toggle({ label, checked, onChange, icon }) {
   );
 }
 
-// =========================================
-// Feature Comparison (scraping‑specific)
-// =========================================
+// -----------------------------------------
+// Feature Comparison (scraping-specific)
+// -----------------------------------------
 const features = [
   {
     key: "Proxy Pools",
@@ -358,7 +334,7 @@ const features = [
     enterprise: "Playwright Cluster + Session Pinning",
   },
   {
-    key: "Anti‑Bot Handling",
+    key: "Anti-Bot Handling",
     starter: "Basic",
     growth: "Advanced + Captcha",
     enterprise: "Strategy + ML signals",
@@ -392,9 +368,10 @@ function FeatureComparison() {
         resilient crawling.
       </p>
 
+      {/* ★ fixed header: 4 columns now include Growth */}
       <div className="mt-6 overflow-hidden rounded-3xl border border-white/10">
         <div className="grid grid-cols-4 bg-white/5 px-4 py-3 text-xs font-medium text-white/80">
-          <div className="">Feature</div>
+          <div>Feature</div>
           <div className="text-center">Starter</div>
           <div className="text-center">Growth</div>
           <div className="text-center">Enterprise</div>
@@ -419,15 +396,15 @@ function FeatureComparison() {
   );
 }
 
-// =========================================
-// Compliance & Trust strip
-// =========================================
+// -----------------------------------------
+// Compliance Strip
+// -----------------------------------------
 function ComplianceStrip() {
   const items = [
-    { icon: Shield, label: "Policy‑aware scraping (robots.txt)" },
+    { icon: Shield, label: "Policy-aware scraping (robots.txt)" },
     { icon: Workflow, label: "Schema & dedupe pipeline" },
     { icon: Server, label: "Encrypted storage & transit" },
-    { icon: Globe, label: "Geo‑routing / residency options" },
+    { icon: Globe, label: "Geo-routing / residency options" },
   ];
   return (
     <section className="rounded-3xl border border-white/10 bg-white/5 p-6">
@@ -446,9 +423,9 @@ function ComplianceStrip() {
   );
 }
 
-// =========================================
-// FAQ (short)
-// =========================================
+// -----------------------------------------
+// FAQ
+// -----------------------------------------
 function FAQ() {
   const qa = [
     {
@@ -456,7 +433,7 @@ function FAQ() {
       a: "No. Complexity varies per site. We estimate based on volume, bot protection, concurrency, and data guarantees, then finalize on a quick call.",
     },
     {
-      q: "Can you scrape JS‑heavy or login‑gated sites?",
+      q: "Can you scrape JS-heavy or login-gated sites?",
       a: "Yes—via Playwright clusters, session management, and headless browsers. We respect terms and do not collect PII.",
     },
     {
@@ -492,9 +469,9 @@ function FAQ() {
   );
 }
 
-// =========================================
-// Contact Strip (no pricing displayed)
-// =========================================
+// -----------------------------------------
+// Contact Strip
+// -----------------------------------------
 function ContactStrip() {
   return (
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-cyan-500/10 via-emerald-500/10 to-blue-500/10 p-6 md:p-10">
@@ -505,7 +482,7 @@ function ContactStrip() {
           </h3>
           <p className="mt-2 text-sm text-white/70">
             Tell us the target sites, volumes, refresh cadence, and data format.
-            We’ll propose the most cost‑effective setup.
+            We’ll propose the most cost-effective setup.
           </p>
         </div>
         <a
